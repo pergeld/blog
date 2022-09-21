@@ -196,6 +196,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Modules, Admin
+         */
+        App\Providers\ArticleModuleServiceProvider::class,
+
     ],
 
     /*
