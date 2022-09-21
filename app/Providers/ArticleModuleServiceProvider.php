@@ -18,6 +18,8 @@ class ArticleModuleServiceProvider extends ServiceProvider
         // Register routes
         Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function () {
             Route::get('articles/list', [ArticleController::class, 'index']);
+            Route::get('articles/create', [ArticleController::class, 'create']);
+            Route::post('articles/store', [ArticleController::class, 'store']);
         });
     }
 

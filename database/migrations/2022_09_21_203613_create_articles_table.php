@@ -21,8 +21,8 @@ return new class extends Migration
             $table->boolean('is_visible')->default(true);
             $table->string('slug')->unique();
             $table->string('title');
-            $table->text('lead')->nullable();
-            $table->longText('content')->nullable();
+            $table->text('lead')->nullable()->default(null);
+            $table->longText('content')->nullable()->default(null);
             $table->unsignedBigInteger('user_id');
 
             $table->foreign('user_id')
