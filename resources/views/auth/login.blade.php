@@ -37,4 +37,6 @@
             <button type="submit">Login</button>
         </div>
     </form>
+
+    <a href="/forgot-password">Forgot Password?</a>
 </x-front-layout>
