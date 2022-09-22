@@ -157,6 +157,7 @@ export default {
         'csrf',
         'backLink',
         'article',
+        'submitUrl',
     ],
 
     components: {
@@ -185,7 +186,7 @@ export default {
     methods: {
         onSubmit(values) {
             axios.post(
-                '/admin/articles/store',
+                this.submitUrl,
                 this.formData
             )
                 .then((response) => {
