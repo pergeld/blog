@@ -48,6 +48,14 @@
                             <p class="mt-2 text-sm text-gray-500">Rövid bevezető szöveg, ami a hírek lista oldalon is meg fog jelenni.</p>
                         </div>
 
+                        <div>
+                            <label for="content" class="block text-sm font-medium text-gray-700">Leírás</label>
+                            <div class="mt-1">
+                                <quill-editor
+                                    @input="formData.content = $event"
+                                ></quill-editor>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -141,6 +149,7 @@
 import axios from 'axios';
 import dayjs from 'dayjs';
 import { Form, Field, ErrorMessage } from 'vee-validate';
+import QuillEditor from '../editor/QuillEditor.vue';
 
 export default {
     props: [
@@ -152,6 +161,7 @@ export default {
         Form,
         Field,
         ErrorMessage,
+        QuillEditor,
     },
 
     data() {
@@ -160,6 +170,7 @@ export default {
             formData: {
                 title: '',
                 lead: '',
+                content: '',
                 is_visible: true,
                 published_date: dayjs().format('YYYY-MM-DD'),
                 published_time: dayjs().format('00:00'),
