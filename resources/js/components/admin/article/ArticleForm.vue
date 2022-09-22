@@ -46,7 +46,7 @@
 
                         <div class="flex items-start">
                             <div class="flex h-5 items-center">
-                                <input id="is_visible" name="is_visible" v-model="formData.is_visible" type="checkbox" value="1" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:outline-none focus:ring-none">
+                                <input id="is_visible" name="is_visible" v-model="formData.is_visible" type="checkbox" value="1" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:outline-none focus:ring-0">
                             </div>
                             <div class="ml-3 text-sm">
                                 <label for="is_visible" class="font-medium text-gray-700">Látható az oldalon?</label>
@@ -111,8 +111,8 @@
             </div>
 
             <div class="flex justify-end">
-                <a :href="backLink" class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Mégsem</a>
-                <button type="submit" class="ml-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Mentés</button>
+                <a :href="backLink" class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-0">Mégsem</a>
+                <button type="submit" class="ml-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-0">Mentés</button>
             </div>
         </form>
     </div>
