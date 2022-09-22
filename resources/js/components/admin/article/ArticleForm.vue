@@ -125,7 +125,7 @@ export default {
                 this.formData
             )
                 .then((response) => {
-                    console.log(response.data);
+                    window.location = response.data.redirect;
                 })
                 .catch((errors) => {
                     console.log(errors);

@@ -78,4 +78,10 @@
             </table>
         </div>
     </div>
+
+    @if (session()->has('successMessage'))
+        <success-notification
+            message={{ session()->get('successMessage') }}
+        ></success-notification>
+    @endif
 </x-admin-layout>

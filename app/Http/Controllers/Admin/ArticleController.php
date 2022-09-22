@@ -36,6 +36,7 @@ class ArticleController extends Controller
 
         $article->save();
 
-        return redirect('/admin/articles/list');
+        session()->flash('successMessage', 'Hír');
+        return ['redirect' => '/admin/articles/list'];
     }
 }
