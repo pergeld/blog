@@ -1,6 +1,7 @@
 <template>
     <div ref="editor"
         class="block w-full rounded-b-md border-gray-300 shadow-sm"
+        style="min-height: 200px"
     ></div>
 </template>
 
