@@ -36,6 +36,7 @@ export default {
             [{ 'indent': '-1'}, { 'indent': '+1' }],
             [{ 'direction': 'rtl' }],
             ['image'],
+            ['link'],
 
             [{ 'color': [] }, { 'background': [] }],
             [{ 'font': [] }],
