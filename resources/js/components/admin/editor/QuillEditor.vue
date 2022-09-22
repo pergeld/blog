@@ -13,12 +13,9 @@ import ImageResize from 'quill-image-resize';
 Quill.register('modules/imageResize', ImageResize);
 
 export default {
-    props: {
-        value: {
-            type: String,
-            default: ''
-        }
-    },
+    props: [
+        'contentText',
+    ],
 
     data() {
         return {
@@ -57,7 +54,7 @@ export default {
             theme: 'snow',
         });
 
-        this.editor.root.innerHTML = this.value;
+        this.editor.root.innerHTML = this.contentText;
         this.editor.on('text-change', function () {
             return _this.update();
         });

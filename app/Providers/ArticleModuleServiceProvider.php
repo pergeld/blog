@@ -20,6 +20,7 @@ class ArticleModuleServiceProvider extends ServiceProvider
             Route::get('articles/list', [ArticleController::class, 'index']);
             Route::get('articles/create', [ArticleController::class, 'create']);
             Route::post('articles/store', [ArticleController::class, 'store']);
+            Route::get('articles/{article}/edit', [ArticleController::class, 'edit']);
         });
     }
 

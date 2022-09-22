@@ -17,7 +17,9 @@ class ArticleController extends Controller
 
     public function create()
     {
-        return view('admin.article.form');
+        $article = new Article();
+
+        return view('admin.article.form', compact('article'));
     }
 
     public function store(ArticleRequest $request)
@@ -38,5 +40,12 @@ class ArticleController extends Controller
 
         session()->flash('successMessage', 'Hír');
         return ['redirect' => '/admin/articles/list'];
+    }
+
+    public function edit(int $articleId)
+    {
+        $article = Article::findOrFail($articleId);
+
+        return view('admin.article.form', compact('article'));
     }
 }

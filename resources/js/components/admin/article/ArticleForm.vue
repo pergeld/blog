@@ -53,6 +53,7 @@
                             <div class="mt-1">
                                 <quill-editor
                                     @input="formData.content = $event"
+                                    :content-text="formData.content"
                                 ></quill-editor>
                             </div>
                         </div>
@@ -155,6 +156,7 @@ export default {
     props: [
         'csrf',
         'backLink',
+        'article',
     ],
 
     components: {
@@ -168,14 +170,14 @@ export default {
         return {
             form: null,
             formData: {
-                title: '',
-                lead: '',
-                content: '',
+                title: this.article.title,
+                lead: this.article.lead,
+                content: this.article.content,
                 is_visible: true,
-                published_date: dayjs().format('YYYY-MM-DD'),
-                published_time: dayjs().format('00:00'),
-                expires_date: dayjs().add(1, 'y').format('YYYY-MM-DD'),
-                expires_time: dayjs().format('23:59'),
+                published_date: this.article.published_date,
+                published_time: this.article.published_time,
+                expires_date: this.article.expires_date,
+                expires_time: this.article.expires_time,
             }
         }
     },
