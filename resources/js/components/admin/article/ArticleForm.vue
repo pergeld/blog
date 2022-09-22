@@ -60,11 +60,23 @@
                             <label for="published_date" class="block text-sm font-medium text-gray-700 mb-2">Megjelenés dátuma</label>
                             <div class="grid grid-cols-2 gap-6">
                                 <div class="col-span-2 sm:col-span-1">
-                                    <input type="date" name="published_date" id="published_date" v-model="formData.published_date" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    <input
+                                        type="date"
+                                        name="published_date"
+                                        id="published_date"
+                                        v-model="formData.published_date"
+                                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                    >
                                 </div>
 
                                 <div class="col-span-2 sm:col-span-1">
-                                    <input type="time" name="published_time" id="published_time" v-model="formData.published_time" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    <input
+                                        type="time"
+                                        name="published_time"
+                                        id="published_time"
+                                        v-model="formData.published_time"
+                                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -73,11 +85,23 @@
                             <label for="expires_date" class="block text-sm font-medium text-gray-700 mb-2">Megjelenés vége</label>
                             <div class="grid grid-cols-2 gap-6">
                                 <div class="col-span-2 sm:col-span-1">
-                                    <input type="date" name="expires_date" id="expires_date" v-model="formData.expires_date" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    <input
+                                        type="date"
+                                        name="expires_date"
+                                        id="expires_date"
+                                        v-model="formData.expires_date"
+                                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                    >
                                 </div>
 
                                 <div class="col-span-2 sm:col-span-1">
-                                    <input type="time" name="expires_time" id="expires_time" v-model="formData.expires_time" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    <input
+                                        type="time"
+                                        name="expires_time"
+                                        id="expires_time"
+                                        v-model="formData.expires_time"
+                                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -96,6 +120,7 @@
 
 <script>
 import axios from 'axios';
+import dayjs from 'dayjs';
 
 export default {
     props: [
@@ -109,11 +134,11 @@ export default {
             formData: {
                 title: '',
                 lead: '',
-                is_visible: '',
-                published_date: '',
-                published_time: '',
-                expires_date: '',
-                expires_time: '',
+                is_visible: true,
+                published_date: dayjs().format('YYYY-MM-DD'),
+                published_time: dayjs().format('00:00'),
+                expires_date: dayjs().add(1, 'y').format('YYYY-MM-DD'),
+                expires_time: dayjs().format('23:59'),
             }
         }
     },
