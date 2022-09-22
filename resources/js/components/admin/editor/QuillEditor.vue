@@ -8,6 +8,9 @@
 import Quill from 'quill';
 import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';
+import ImageResize from 'quill-image-resize';
+
+Quill.register('modules/imageResize', ImageResize);
 
 export default {
     props: {
@@ -35,6 +38,7 @@ export default {
             [{ 'script': 'sub'}, { 'script': 'super' }],
             [{ 'indent': '-1'}, { 'indent': '+1' }],
             [{ 'direction': 'rtl' }],
+            ['image'],
 
             [{ 'color': [] }, { 'background': [] }],
             [{ 'font': [] }],
@@ -45,7 +49,10 @@ export default {
 
         this.editor = new Quill(this.$refs.editor, {
             modules: {
-                toolbar: toolbarOptions
+                toolbar: toolbarOptions,
+                imageResize: {
+                    modules: [ 'Resize', 'DisplaySize', 'Toolbar' ]
+                },
             },
             theme: 'snow',
         });
