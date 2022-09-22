@@ -27,6 +27,10 @@ class ArticleRequest extends FormRequest
             'title' => ['required', 'max:100'],
             'lead' => ['required', 'max:250'],
             'published_date' => ['required'],
+            'published_date' => ['required', 'date'],
+            'published_time' => ['required', 'date_format:H:i'],
+            'expires_date' => ['nullable', 'date'],
+            'expires_time' => ['nullable', 'date_format:H:i'],
         ];
     }
 }
