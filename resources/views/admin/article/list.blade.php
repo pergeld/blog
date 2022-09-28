@@ -99,7 +99,13 @@
 
     @if (session()->has('successMessage'))
         <success-notification
-            message={{ session()->get('successMessage') }}
+            title="Sikeres mentés!"
         ></success-notification>
+    @endif
+
+    @if (session()->has('deleteMessage'))
+        <success-notification
+            title="Sikeres törlés!"
+        ></succes-notification>
     @endif
 </x-admin-layout>

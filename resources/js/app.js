@@ -6,7 +6,7 @@ import { createApp } from 'vue/dist/vue.esm-bundler.js';
 import DashboardDropdown from './components/admin/DashboardDropdown.vue';
 import DashboardSidebar from './components/admin/DashboardSidebar.vue';
 import MainMenu from './components/admin/MainMenu.vue';
-import SuccessNotification from './components/admin/SuccessNotification.vue';
+import SuccessNotification from './components/admin/notification/SuccessNotification.vue';
 
 // Admin elements
 import ArticleForm from './components/admin/article/ArticleForm.vue';

@@ -44,7 +44,7 @@ class ArticleController extends Controller
 
         $article->save();
 
-        session()->flash('successMessage', 'Hír');
+        session()->flash('successMessage');
         return ['redirect' => '/admin/articles/list'];
     }
 
@@ -81,7 +81,7 @@ class ArticleController extends Controller
 
         $article->save();
 
-        session()->flash('successMessage', 'Hír');
+        session()->flash('successMessage');
         return ['redirect' => '/admin/articles/list'];
     }
 
@@ -91,6 +91,7 @@ class ArticleController extends Controller
 
         $article->delete();
 
+        session()->flash('deleteMessage');
         return redirect('/admin/articles/list');
     }
 

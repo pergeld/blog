@@ -9,8 +9,7 @@
                             <CheckCircleIcon class="h-6 w-6 text-white" aria-hidden="true" />
                         </div>
                         <div class="ml-3 w-0 flex-1 pt-0.5">
-                            <p class="text-sm font-medium text-white">Sikeres mentés!</p>
-                            <p class="mt-1 text-sm text-gray-100">A(z) {{ message }} sikeresen el lett mentve.</p>
+                            <p class="text-sm font-medium text-white">{{ title }}</p>
                         </div>
                         <div class="ml-4 flex flex-shrink-0">
                             <button type="button" @click="show = false" class="inline-flex rounded-md bg-green-500 text-white hover:text-gray-200 focus:outline-none focus:ring-0">
@@ -29,7 +28,7 @@
     import { ref, onMounted } from 'vue'
     import { CheckCircleIcon } from '@heroicons/vue/24/outline'
     import { XMarkIcon } from '@heroicons/vue/20/solid'
-    const props = defineProps(['message'])
+    const props = defineProps(['title'])
     onMounted(() => {
         setTimeout(function () {
             show.value = false;
