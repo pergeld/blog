@@ -39,6 +39,7 @@ class ArticleResource extends JsonResource
             'published_time' => $published_time,
             'expires_date' => $expires_date,
             'expires_time' => $expires_time,
+            'imageUpload' => $this->imageUpload,
         ];
     }
 }

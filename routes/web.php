@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,7 @@ Route::middleware(['auth', 'verified'])->get('/profile', function () {
 Route::middleware(['auth', 'verified'])->get('/password', function () {
     return view('admin.profile.password');
 })->name('password');
+
+Route::middleware(['web', 'auth'])->group(function () {
+    Route::post('/upload', [UploadController::class, 'upload']);
+});

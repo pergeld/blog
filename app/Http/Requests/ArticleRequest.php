@@ -31,6 +31,7 @@ class ArticleRequest extends FormRequest
             'published_time' => ['required', 'date_format:H:i'],
             'expires_date' => ['nullable', 'date'],
             'expires_time' => ['nullable', 'date_format:H:i'],
+            'imageUpload' => ['nullable', 'string'],
         ];
     }
 }

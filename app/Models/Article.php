@@ -19,6 +19,7 @@ class Article extends Model
         'expires_at',
         'is_visible',
         'user_id',
+        'imageUpload',
     ];
 
     protected $dates = [
