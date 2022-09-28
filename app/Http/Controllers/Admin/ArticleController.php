@@ -85,6 +85,15 @@ class ArticleController extends Controller
         return ['redirect' => '/admin/articles/list'];
     }
 
+    public function destroy($articleId)
+    {
+        $article = Article::findOrFail($articleId);
+
+        $article->delete();
+
+        return redirect('/admin/articles/list');
+    }
+
     private function imageUploading($image, $article)
     {
         $newFilename = Str::after($image, 'tmp/');

@@ -77,9 +77,13 @@
                                 <a href="/admin/articles/{{ $article->id }}/edit" class="inline-flex items-center justify-center rounded-md bg-green-600 px-4 py-2 mx-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-none sm:w-auto">
                                     Szerkesztés
                                 </a>
-                                <a href="#" class="inline-flex items-center justify-center rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-none sm:w-auto">
-                                    Törlés
-                                </a>
+                                <form action="/admin/articles/{{ $article->id }}" method="POST" class="inline-flex items-center justify-center">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="inline-flex items-center justify-center rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-none sm:w-auto">
+                                        Törlés
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @empty
