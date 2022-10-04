@@ -200,7 +200,7 @@ return [
          * Modules, Admin
          */
         App\Providers\ArticleModuleServiceProvider::class,
-
+        App\Providers\ArticleCategoryModuleServiceProvider::class,
     ],
 
     /*
