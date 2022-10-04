@@ -18,7 +18,7 @@
         ></dashboard-sidebar>
 
         <!-- Static sidebar for desktop -->
-        <div class="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
+        <div class="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col">
             <!-- Sidebar component, swap this element with another sidebar if you like -->
             <div class="flex flex-grow flex-col overflow-y-auto bg-indigo-700 pt-5">
                 <div class="flex flex-shrink-0 items-center px-4">
@@ -32,11 +32,11 @@
             </div>
         </div>
 
-        <div class="flex flex-1 flex-col md:pl-64">
+        <div class="flex flex-1 flex-col lg:pl-64">
             <div class="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white shadow">
                 <div class="flex flex-1 justify-end px-4">
 
-                    <div class="ml-4 flex items-center md:ml-6">
+                    <div class="ml-4 flex items-center lg:ml-6">
                         <button type="button" class="rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                             <!-- Heroicon name: outline/bell -->
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">

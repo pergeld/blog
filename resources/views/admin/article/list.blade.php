@@ -22,9 +22,9 @@
                 <thead class="bg-gray-50">
                     <tr>
                         <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-medium uppercase text-gray-700 sm:pl-6">Megnevezés</th>
-                        <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-medium uppercase text-gray-700 lg:table-cell">Közzététel dátuma</th>
-                        <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-medium uppercase text-gray-700 sm:table-cell">Megjelenés vége</th>
-                        <th scope="col" class="px-3 py-3.5 text-left text-sm font-medium uppercase text-gray-700">Szerző</th>
+                        <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-medium uppercase text-gray-700 xl:table-cell">Közzététel dátuma</th>
+                        <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-medium uppercase text-gray-700 xl:table-cell">Megjelenés vége</th>
+                        <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-medium uppercase text-gray-700 sm:table-cell">Szerző</th>
                         <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-medium uppercase text-gray-700 md:table-cell">Látható?</th>
                         <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6"></th>
                     </tr>
@@ -35,22 +35,22 @@
                         <tr>
                             <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
                                 {{ $article->title }}
-                            <dl class="font-normal lg:hidden">
+                            <dl class="font-normal hidden sm:block xl:hidden">
                                 <dd class="mt-1 truncate text-gray-700">
                                     <i>{{ $article->published_at->translatedFormat('Y. F j. H:i') }}</i>
                                 </dd>
-                                <dd class="mt-1 truncate text-gray-500 sm:hidden">
+                                <dd class="mt-1 truncate text-gray-500">
                                     <i>{{ $article->expires_at->translatedFormat('Y. F j. H:i') }}</i>
                                 </dd>
                             </dl>
                             </td>
-                            <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">
+                            <td class="hidden px-3 py-4 text-sm text-gray-500 xl:table-cell">
                                 <i>{{ $article->published_at->translatedFormat('Y. F j. H:i') }}</i>
                             </td>
-                            <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">
+                            <td class="hidden px-3 py-4 text-sm text-gray-500 xl:table-cell">
                                 <i>{{ $article->expires_at->translatedFormat('Y. F j. H:i') }}</i>
                             </td>
-                            <td class="px-3 py-4 text-sm text-gray-500">
+                            <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">
                                 {{ optional($article->user)->name }}
                             </td>
                             <td class="hidden px-3 py-4 text-sm text-gray-500 md:table-cell">
@@ -70,11 +70,11 @@
                                     </div>
                                 @endif
                             </td>
-                            <td class="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <td class="flex flex-col 2xl:flex-row justify-end items-end py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                 <a href="#" class="inline-flex items-center justify-center rounded-md bg-gray-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-none sm:w-auto">
                                     Előnézet
                                 </a>
-                                <a href="/admin/articles/{{ $article->id }}/edit" class="inline-flex items-center justify-center rounded-md bg-green-600 px-4 py-2 mx-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-none sm:w-auto">
+                                <a href="/admin/articles/{{ $article->id }}/edit" class="inline-flex items-center justify-center rounded-md bg-green-600 px-4 py-2 my-4 2xl:my-0 mx-0 2xl:mx-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-none sm:w-auto">
                                     Szerkesztés
                                 </a>
                                 <form action="/admin/articles/{{ $article->id }}" method="POST" class="inline-flex items-center justify-center">

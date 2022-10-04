@@ -9,12 +9,12 @@
             <input type="hidden" name="_token" :value="csrf">
 
             <div class="bg-gray-50 px-4 py-6 shadow sm:rounded-lg sm:p-6">
-                <div class="lg:grid lg:grid-cols-3 lg:gap-6">
-                    <div class="lg:col-span-1">
+                <div class="xl:grid xl:grid-cols-3 xl:gap-6">
+                    <div class="xl:col-span-1">
                         <h3 class="text-lg font-medium leading-6 text-gray-900">Adatok</h3>
                         <p class="mt-1 text-sm text-gray-500">A hír adatai. A cím és a bevezető megadása kötelező.</p>
                     </div>
-                    <div class="mt-5 space-y-6 lg:col-span-2 lg:mt-0">
+                    <div class="mt-5 space-y-6 xl:col-span-2 xl:mt-0">
 
                         <div>
                             <label for="title" class="block text-sm font-medium text-gray-700">Cím</label>
@@ -63,12 +63,12 @@
             </div>
 
             <div class="bg-gray-50 px-4 py-6 shadow sm:rounded-lg sm:p-6">
-                <div class="lg:grid lg:grid-cols-3 lg:gap-6">
-                    <div class="lg:col-span-1">
+                <div class="xl:grid xl:grid-cols-3 xl:gap-6">
+                    <div class="xl:col-span-1">
                         <h3 class="text-lg font-medium leading-6 text-gray-900">Megjelenési adatok</h3>
                         <p class="mt-1 text-sm text-gray-500">A hír akkor lesz megtekinthető a beállított megjelenési idő után, ha a láthatóság is be van kapcsolva.</p>
                     </div>
-                    <div class="mt-5 space-y-6 lg:col-span-2 lg:mt-0">
+                    <div class="mt-5 space-y-6 xl:col-span-2 xl:mt-0">
 
                         <div class="text-base font-medium text-gray-900" aria-hidden="true">Láthatóság</div>
 
@@ -139,8 +139,8 @@
             </div>
 
             <div class="bg-gray-50 px-4 py-6 shadow sm:rounded-lg sm:p-6">
-                <div class="lg:grid lg:grid-cols-3 lg:gap-6">
-                    <div class="lg:col-span-1">
+                <div class="xl:grid xl:grid-cols-3 xl:gap-6">
+                    <div class="xl:col-span-1">
                         <h3 class="text-lg font-medium leading-6 text-gray-900">Borítókép</h3>
                         <p class="mt-1 text-sm text-gray-500">A hír borítóképe. Megadása nem kötelező, de ajánlott.</p>
                         <p class="mt-1 text-sm text-gray-500">A borítóképe minimum mérete: <strong>800x600</strong> px.</p>
@@ -148,7 +148,7 @@
                         <p class="mt-1 text-sm text-gray-500">Maximum 1 darab kép tölthető fel.</p>
                         <p class="mt-1 text-sm text-gray-500">A fájl mérete maximum: <strong>2 MB</strong>.</p>
                     </div>
-                    <div class="mt-5 space-y-6 lg:col-span-2 lg:mt-0">
+                    <div class="mt-5 space-y-6 xl:col-span-2 xl:mt-0">
 
                         <file-pond
                             name="imageUpload"

@@ -1,6 +1,6 @@
 <template>
     <TransitionRoot as="template" :show="sidebarOpen">
-      <Dialog as="div" class="relative z-40 md:hidden" @close="sidebarOpen = false">
+      <Dialog as="div" class="relative z-40 lg:hidden" @close="sidebarOpen = false">
         <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
           <div class="fixed inset-0 bg-gray-600 bg-opacity-75" />
         </TransitionChild>
@@ -32,7 +32,7 @@
       </Dialog>
     </TransitionRoot>
 
-    <button type="button" class="absolute top-0 left-0 z-40 h-16 border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden" @click="sidebarOpen = true">
+    <button type="button" class="absolute top-0 left-0 z-40 h-16 border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 lg:hidden" @click="sidebarOpen = true">
         <Bars3BottomLeftIcon class="h-6 w-6" aria-hidden="true" />
     </button>
 </template>
