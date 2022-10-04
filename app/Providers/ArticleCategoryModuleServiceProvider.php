@@ -22,6 +22,7 @@ class ArticleCategoryModuleServiceProvider extends ServiceProvider
             Route::post('articleCategories/store', [ArticleCategoryController::class, 'store']);
             Route::get('articleCategories/{articleCategory}/edit', [ArticleCategoryController::class, 'edit']);
             Route::post('articleCategories/{articleCategory}', [ArticleCategoryController::class, 'update']);
+            Route::delete('articleCategories/{articleCategory}', [ArticleCategoryController::class, 'destroy']);
         });
     }
 

@@ -62,4 +62,14 @@ class ArticleCategoryController extends Controller
         session()->flash('successMessage');
         return redirect('/admin/articleCategories/list');
     }
+
+    public function destroy($articleCategoryId)
+    {
+        $articleCategory = ArticleCategory::findOrFail($articleCategoryId);
+
+        $articleCategory->delete();
+
+        session()->flash('deleteMessage');
+        return redirect('/admin/articleCategories/list');
+    }
 }
