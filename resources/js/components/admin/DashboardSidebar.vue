@@ -19,7 +19,9 @@
                 <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300" alt="Your Company" />
               </div>
               <div class="mt-5 h-0 flex-1 overflow-y-auto">
-                <main-menu></main-menu>
+                <main-menu
+                    :current-route-name="props.currentRouteName"
+                ></main-menu>
               </div>
             </DialogPanel>
           </TransitionChild>
@@ -49,4 +51,5 @@
         XMarkIcon,
     } from '@heroicons/vue/24/outline'
     const sidebarOpen = ref(false)
+    const props = defineProps(['currentRouteName'])
 </script>

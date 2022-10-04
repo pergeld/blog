@@ -13,7 +13,9 @@
 </head>
 <body class="h-full">
     <div id="app">
-        <dashboard-sidebar></dashboard-sidebar>
+        <dashboard-sidebar
+            current-route-name="{{ Request::path() }}"
+        ></dashboard-sidebar>
 
         <!-- Static sidebar for desktop -->
         <div class="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
@@ -23,7 +25,9 @@
                     <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300" alt="Your Company">
                 </div>
                 <div class="mt-5 flex flex-1 flex-col">
-                    <main-menu></main-menu>
+                    <main-menu
+                        current-route-name="{{ Request::path() }}"
+                    ></main-menu>
                 </div>
             </div>
         </div>
