@@ -13,6 +13,7 @@
             csrf="{{ csrf_token() }}"
             back-link="/admin/articles/list"
             :article='@json(new \App\Http\Resources\ArticleResource($article))'
+            :article-categories='@json(\App\Http\Resources\ArticleCategoryResource::collection($articleCategories))'
             submit-url="@if ($article->exists) /admin/articles/{{$article->id}} @else /admin/articles/store @endif"
         ></article-form>
     </div>

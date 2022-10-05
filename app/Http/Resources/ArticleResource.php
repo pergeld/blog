@@ -39,6 +39,7 @@ class ArticleResource extends JsonResource
             'published_time' => $published_time,
             'expires_date' => $expires_date,
             'expires_time' => $expires_time,
+            'article_category_id' => $this->article_category_id,
             'imageUpload' => $this->imageUpload,
         ];
     }

@@ -65,6 +65,35 @@
             <div class="bg-gray-50 px-4 py-6 shadow sm:rounded-lg sm:p-6">
                 <div class="xl:grid xl:grid-cols-3 xl:gap-6">
                     <div class="xl:col-span-1">
+                        <h3 class="text-lg font-medium leading-6 text-gray-900">Kategória</h3>
+                        <p class="mt-1 text-sm text-gray-500">Válaszd ki, hogy a hír melyik kategóriába kerüljön.</p>
+                    </div>
+                    <div class="mt-5 space-y-6 xl:col-span-2 xl:mt-0">
+
+                        <div>
+                            <label for="article_category_id" class="block text-sm font-medium text-gray-700">Cím</label>
+                            <Field
+                                as="select"
+                                name="article_category_id"
+                                id="article_category_id"
+                                :rules="validateRequired"
+                                v-model="formData.article_category_id"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            >
+                                <option v-for="articleCategory in this.articleCategories" :key="articleCategory.id" :value="articleCategory.id">
+                                    {{ articleCategory.title }}
+                                </option>
+                            </Field>
+                            <ErrorMessage name="article_category_id" class="mt-2 text-sm text-red-700" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 px-4 py-6 shadow sm:rounded-lg sm:p-6">
+                <div class="xl:grid xl:grid-cols-3 xl:gap-6">
+                    <div class="xl:col-span-1">
                         <h3 class="text-lg font-medium leading-6 text-gray-900">Megjelenési adatok</h3>
                         <p class="mt-1 text-sm text-gray-500">A hír akkor lesz megtekinthető a beállított megjelenési idő után, ha a láthatóság is be van kapcsolva.</p>
                     </div>
@@ -211,6 +240,7 @@ export default {
         'csrf',
         'backLink',
         'article',
+        'articleCategories',
         'submitUrl',
     ],
 
@@ -234,6 +264,7 @@ export default {
                 published_time: this.article.published_time,
                 expires_date: this.article.expires_date,
                 expires_time: this.article.expires_time,
+                article_category_id: this.article.article_category_id,
                 imageUpload: this.article.imageUpload,
                 change_picture: false,
             },

@@ -20,6 +20,7 @@ class Article extends Model
         'is_visible',
         'user_id',
         'imageUpload',
+        'article_category_id',
     ];
 
     protected $dates = [
@@ -30,5 +31,10 @@ class Article extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function articleCategory()
+    {
+        return $this->belongsTo(ArticleCategory::class);
     }
 }

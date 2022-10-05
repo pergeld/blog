@@ -13,4 +13,9 @@ class ArticleCategory extends Model
         'title',
         'is_visible',
     ];
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 }

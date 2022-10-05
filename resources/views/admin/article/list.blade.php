@@ -21,19 +21,20 @@
             <table class="min-w-full divide-y divide-gray-300">
                 <thead class="bg-gray-50">
                     <tr>
-                        <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-medium uppercase text-gray-700 sm:pl-6">Megnevezés</th>
-                        <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-medium uppercase text-gray-700 xl:table-cell">Közzététel dátuma</th>
-                        <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-medium uppercase text-gray-700 xl:table-cell">Megjelenés vége</th>
-                        <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-medium uppercase text-gray-700 sm:table-cell">Szerző</th>
-                        <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-medium uppercase text-gray-700 md:table-cell">Látható?</th>
-                        <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6"></th>
+                        <th scope="col" class="py-2.5 pl-4 pr-3 text-left text-sm font-medium uppercase text-gray-700 sm:pl-6">Megnevezés</th>
+                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-700 xl:table-cell">Kategória</th>
+                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-700 xl:table-cell">Közzététel dátuma</th>
+                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-700 xl:table-cell">Megjelenés vége</th>
+                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-700 sm:table-cell">Szerző</th>
+                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-700 md:table-cell">Látható?</th>
+                        <th scope="col" class="relative py-2.5 pl-3 pr-4 sm:pr-6"></th>
                     </tr>
                 </thead>
 
                 <tbody class="divide-y divide-gray-200 bg-white">
                     @forelse ($articles as $article)
                         <tr>
-                            <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                            <td class="w-full max-w-0 py-4 pl-4 pr-2 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
                                 {{ $article->title }}
                             <dl class="font-normal hidden sm:block xl:hidden">
                                 <dd class="mt-1 truncate text-gray-700">
@@ -44,16 +45,19 @@
                                 </dd>
                             </dl>
                             </td>
-                            <td class="hidden px-3 py-4 text-sm text-gray-500 xl:table-cell">
+                            <td class="hidden px-2 py-4 text-sm text-gray-500 xl:table-cell">
+                                {{ optional($article->articleCategory)->title }}
+                            </td>
+                            <td class="hidden px-2 py-4 text-sm text-gray-500 xl:table-cell">
                                 <i>{{ $article->published_at->translatedFormat('Y. F j. H:i') }}</i>
                             </td>
-                            <td class="hidden px-3 py-4 text-sm text-gray-500 xl:table-cell">
+                            <td class="hidden px-2 py-4 text-sm text-gray-500 xl:table-cell">
                                 <i>{{ $article->expires_at->translatedFormat('Y. F j. H:i') }}</i>
                             </td>
-                            <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">
+                            <td class="hidden px-2 py-4 text-sm text-gray-500 sm:table-cell">
                                 {{ optional($article->user)->name }}
                             </td>
-                            <td class="hidden px-3 py-4 text-sm text-gray-500 md:table-cell">
+                            <td class="hidden px-2 py-4 text-sm text-gray-500 md:table-cell">
                                 @if ($article->is_visible)
                                     <div class="flex text-green-500">
                                         <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
