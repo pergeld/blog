@@ -62,4 +62,14 @@ class TagController extends Controller
         session()->flash('successMessage');
         return redirect('/admin/tags/list');
     }
+
+    public function destroy($tagId)
+    {
+        $tag = Tag::findOrFail($tagId);
+
+        $tag->delete();
+
+        session()->flash('deleteMessage');
+        return redirect('/admin/tags/list');
+    }
 }

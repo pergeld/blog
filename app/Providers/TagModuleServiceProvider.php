@@ -22,6 +22,7 @@ class TagModuleServiceProvider extends ServiceProvider
             Route::post('tags/store', [TagController::class, 'store']);
             Route::get('tags/{tag}/edit', [TagController::class, 'edit']);
             Route::post('tags/{tag}', [TagController::class, 'update']);
+            Route::delete('tags/{tag}', [TagController::class, 'destroy']);
         });
     }
 
