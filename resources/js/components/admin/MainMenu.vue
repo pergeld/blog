@@ -9,7 +9,7 @@
 
 <script setup>
     import {
-        CalendarIcon,
+        TagIcon,
         ChartBarIcon,
         FolderIcon,
         HomeIcon,
@@ -20,7 +20,7 @@
         { name: 'Dashboard', href: '#', icon: HomeIcon, current: props.currentRouteName.includes('dashboard') ? true : false },
         { name: 'Hírek', href: '/admin/articles/list', icon: NewspaperIcon, current: props.currentRouteName.includes('admin/articles/') ? true : false },
         { name: 'Hír kategóriák', href: '/admin/articleCategories/list', icon: FolderIcon, current: props.currentRouteName.includes('admin/articleCategories/') ? true : false },
-        { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
+        { name: 'Címkék', href: '/admin/tags/list', icon: TagIcon, current: props.currentRouteName.includes('admin/tags/') ? true : false },
         { name: 'Documents', href: '#', icon: InboxIcon, current: false },
         { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
     ]
