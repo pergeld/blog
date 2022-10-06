@@ -71,7 +71,7 @@
                     <div class="mt-5 space-y-6 xl:col-span-2 xl:mt-0">
 
                         <div>
-                            <label for="article_category_id" class="block text-sm font-medium text-gray-700">Cím</label>
+                            <label for="article_category_id" class="block text-sm font-medium text-gray-700">Kategória</label>
                             <Field
                                 as="select"
                                 name="article_category_id"
@@ -85,6 +85,37 @@
                                 </option>
                             </Field>
                             <ErrorMessage name="article_category_id" class="mt-2 text-sm text-red-700" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 px-4 py-6 shadow sm:rounded-lg sm:p-6">
+                <div class="xl:grid xl:grid-cols-3 xl:gap-6">
+                    <div class="xl:col-span-1">
+                        <h3 class="text-lg font-medium leading-6 text-gray-900">Címkék</h3>
+                        <p class="mt-1 text-sm text-gray-500">Válaszd ki a hírhez tartozó címkéket.</p>
+                    </div>
+                    <div class="mt-5 space-y-6 xl:col-span-2 xl:mt-0">
+
+                        <div>
+                            <label for="" class="block text-sm font-medium text-gray-700">Címkék</label>
+                            <VueMultiselect
+                                v-model="formData.tags"
+                                :options="this.tags"
+                                :multiple="true"
+                                :close-on-select="false"
+                                :clear-on-select="false"
+                                placeholder="Válasz címkéket"
+                                label="title"
+                                track-by="id"
+                                selectLabel="Nyomj enter a kiválasztáshoz"
+                                selectedLabel="Kiválasztva"
+                                deselectLabel="Nyomj enter a törléshez"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                            >
+                            </VueMultiselect>
                         </div>
 
                     </div>
@@ -232,6 +263,7 @@ import "filepond/dist/filepond.min.css";
 import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 import FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size';
 import FilePondPluginImageValidateSize from 'filepond-plugin-image-validate-size';
+import VueMultiselect from 'vue-multiselect'
 
 const FilePond = vueFilePond(FilePondPluginFileValidateType, FilePondPluginFileValidateSize, FilePondPluginImageValidateSize);
 
@@ -241,6 +273,7 @@ export default {
         'backLink',
         'article',
         'articleCategories',
+        'tags',
         'submitUrl',
     ],
 
@@ -250,6 +283,7 @@ export default {
         ErrorMessage,
         QuillEditor,
         FilePond,
+        VueMultiselect,
     },
 
     data() {
@@ -265,6 +299,7 @@ export default {
                 expires_date: this.article.expires_date,
                 expires_time: this.article.expires_time,
                 article_category_id: this.article.article_category_id,
+                tags: this.article.tags,
                 imageUpload: this.article.imageUpload,
                 change_picture: false,
             },
@@ -316,3 +351,5 @@ export default {
     }
 }
 </script>
+
+<style src="vue-multiselect/dist/vue-multiselect.css"></style>

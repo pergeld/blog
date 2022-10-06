@@ -40,6 +40,7 @@ class ArticleResource extends JsonResource
             'expires_date' => $expires_date,
             'expires_time' => $expires_time,
             'article_category_id' => $this->article_category_id,
+            'tags' => TagResource::collection($this->tags),
             'imageUpload' => $this->imageUpload,
         ];
     }

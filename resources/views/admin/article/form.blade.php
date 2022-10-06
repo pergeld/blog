@@ -14,6 +14,7 @@
             back-link="/admin/articles/list"
             :article='@json(new \App\Http\Resources\ArticleResource($article))'
             :article-categories='@json(\App\Http\Resources\ArticleCategoryResource::collection($articleCategories))'
+            :tags='@json(\App\Http\Resources\TagResource::collection($tags))'
             submit-url="@if ($article->exists) /admin/articles/{{$article->id}} @else /admin/articles/store @endif"
         ></article-form>
     </div>

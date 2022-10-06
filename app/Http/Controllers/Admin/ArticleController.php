@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
 use App\Models\ArticleCategory;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -22,8 +23,9 @@ class ArticleController extends Controller
     {
         $article = new Article();
         $articleCategories = ArticleCategory::where('is_visible', true)->get();
+        $tags = Tag::where('is_visible', true)->get();
 
-        return view('admin.article.form', compact('article', 'articleCategories'));
+        return view('admin.article.form', compact('article', 'articleCategories', 'tags'));
     }
 
     public function store(ArticleRequest $request)
@@ -46,6 +48,8 @@ class ArticleController extends Controller
 
         $article->save();
 
+        $this->saveTags($article, $request);
+
         session()->flash('successMessage');
         return ['redirect' => '/admin/articles/list'];
     }
@@ -54,8 +58,9 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($articleId);
         $articleCategories = ArticleCategory::where('is_visible', true)->get();
+        $tags = Tag::where('is_visible', true)->get();
 
-        return view('admin.article.form', compact('article', 'articleCategories'));
+        return view('admin.article.form', compact('article', 'articleCategories', 'tags'));
     }
 
     public function update($articleId, ArticleRequest $request)
@@ -84,6 +89,8 @@ class ArticleController extends Controller
 
         $article->save();
 
+        $this->saveTags($article, $request);
+
         session()->flash('successMessage');
         return ['redirect' => '/admin/articles/list'];
     }
@@ -109,5 +116,16 @@ class ArticleController extends Controller
     {
         $oldFilename = $article->imageUpload;
         Storage::disk('public')->delete($oldFilename);
+    }
+
+    protected function saveTags($article, $request)
+    {
+        $tags = $request->has('tags') ? collect($request->get('tags')) : [];
+
+        $tags = $tags->map(function ($tag) {
+            return $tag['id'];
+        });
+
+        $article->tags()->sync($tags);
     }
 }
