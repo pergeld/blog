@@ -202,6 +202,7 @@ return [
         App\Providers\ArticleModuleServiceProvider::class,
         App\Providers\ArticleCategoryModuleServiceProvider::class,
         App\Providers\TagModuleServiceProvider::class,
+        App\Providers\PageContentModuleServiceProvider::class,
     ],
 
     /*

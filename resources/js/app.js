@@ -10,6 +10,7 @@ import SuccessNotification from './components/admin/notification/SuccessNotifica
 
 // Admin elements
 import ArticleForm from './components/admin/article/ArticleForm.vue';
+import PageContentForm from './components/admin/pageContent/PageContentForm.vue';
 
 createApp({
     components: {
@@ -18,5 +19,6 @@ createApp({
         MainMenu,
         ArticleForm,
         SuccessNotification,
+        PageContentForm,
     },
 }).mount("#app")
