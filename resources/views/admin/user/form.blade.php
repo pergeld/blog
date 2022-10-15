@@ -23,6 +23,7 @@
                                 name="name"
                                 id="name"
                                 maxlength="100"
+                                value="{{ old('name') }}"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             >
 
@@ -39,11 +40,57 @@
                                 name="email"
                                 id="email"
                                 maxlength="100"
+                                value="{{ old('email') }}"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             >
 
                                 <div class="mt-2 text-sm text-red-500">
                                     {{ $errors->first('email') }}
+                                </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 px-4 py-6 shadow sm:rounded-lg sm:p-6">
+                <div class="xl:grid xl:grid-cols-3 xl:gap-6">
+                    <div class="xl:col-span-1">
+                        <h3 class="text-lg font-medium leading-6 text-gray-900">Jelszó</h3>
+                        <p class="mt-1 text-sm text-gray-500"></p>
+                    </div>
+
+                    <div class="mt-5 space-y-6 xl:col-span-2 xl:mt-0">
+
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700">Jelszó</label>
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                maxlength="100"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            >
+
+                                <div class="mt-2 text-sm text-red-500">
+                                    {{ $errors->first('password') }}
+                                </div>
+
+                        </div>
+
+                        <div>
+                            <label for="password_confirmation" class="block text-sm font-medium text-gray-700">Jelszó ismét</label>
+                            <input
+                                type="password"
+                                name="password_confirmation"
+                                id="password_confirmation"
+                                maxlength="100"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            >
+
+                                <div class="mt-2 text-sm text-red-500">
+                                    {{ $errors->first('password_confirmation') }}
                                 </div>
 
                         </div>

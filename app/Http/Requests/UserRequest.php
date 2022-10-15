@@ -33,7 +33,8 @@ class UserRequest extends FormRequest
                 'email',
                 'max:255',
                 Rule::unique(User::class),
-            ]
+            ],
+            'password' => ['required', 'min:6', 'confirmed'],
         ];
     }
 }
