@@ -69,7 +69,6 @@ class ArticleController extends Controller
 
         $data['published_at'] = $request->get('published_date') . ' ' . $request->get('published_time') . ':00';
         $data['expires_at'] = $request->get('expires_date') . ' ' . $request->get('expires_time') . ':00';
-        $data['user_id'] = auth()->user()->id;
 
         $article = Article::findOrFail($articleId);
 
