@@ -25,7 +25,7 @@
     } from '@headlessui/vue'
     const props = defineProps(['logoutAction'])
     const userNavigation = [
-        { name: 'Profil', href: '#' },
+        { name: 'Profil', href: '/profile' },
         { name: 'Beállítások', href: '#' },
         { name: 'Kijelentkezés', href: '#' },
     ]
