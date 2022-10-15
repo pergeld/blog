@@ -19,6 +19,7 @@ class UserModuleServiceProvider extends ServiceProvider
         Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function () {
             Route::get('users/list', [UserController::class, 'index']);
             Route::get('users/create', [UserController::class, 'create']);
+            Route::post('users/store', [UserController::class, 'store']);
         });
     }
 
