@@ -11,6 +11,7 @@ import SuccessNotification from './components/admin/notification/SuccessNotifica
 // Admin elements
 import ArticleForm from './components/admin/article/ArticleForm.vue';
 import PageContentForm from './components/admin/pageContent/PageContentForm.vue';
+import UserForm from './components/admin/user/UserForm.vue';
 
 createApp({
     components: {
@@ -20,5 +21,6 @@ createApp({
         ArticleForm,
         SuccessNotification,
         PageContentForm,
+        UserForm,
     },
 }).mount("#app")

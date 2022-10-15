@@ -10,7 +10,7 @@
 <script setup>
     import {
         TagIcon,
-        ChartBarIcon,
+        UsersIcon,
         FolderIcon,
         HomeIcon,
         DocumentTextIcon,
@@ -22,7 +22,7 @@
         { name: 'Hír kategóriák', href: '/admin/articleCategories/list', icon: FolderIcon, current: props.currentRouteName.includes('admin/articleCategories/') ? true : false },
         { name: 'Címkék', href: '/admin/tags/list', icon: TagIcon, current: props.currentRouteName.includes('admin/tags/') ? true : false },
         { name: 'Tartalomkezelő', href: '/admin/pageContents/list', icon: DocumentTextIcon, current: props.currentRouteName.includes('admin/pageContents/') ? true : false },
-        { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
+        { name: 'Felhasználók', href: '/admin/users/list', icon: UsersIcon, current: props.currentRouteName.includes('admin/users/') ? true : false },
     ]
     const props = defineProps(['currentRouteName'])
 </script>
