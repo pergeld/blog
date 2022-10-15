@@ -18,11 +18,14 @@ class PageContentModuleServiceProvider extends ServiceProvider
         // Register routes
         Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function () {
             Route::get('pageContents/list', [PageContentController::class, 'index']);
-            Route::get('pageContents/create', [PageContentController::class, 'create']);
-            Route::post('pageContents/store', [PageContentController::class, 'store']);
-            Route::get('pageContents/{pageContent}/edit', [PageContentController::class, 'edit']);
-            Route::post('pageContents/{pageContent}', [PageContentController::class, 'update']);
-            Route::delete('pageContents/{pageContent}', [PageContentController::class, 'destroy']);
+
+            Route::group(['middleware' => 'isnotguestwriter'], function () {
+                Route::get('pageContents/create', [PageContentController::class, 'create']);
+                Route::post('pageContents/store', [PageContentController::class, 'store']);
+                Route::get('pageContents/{pageContent}/edit', [PageContentController::class, 'edit']);
+                Route::post('pageContents/{pageContent}', [PageContentController::class, 'update']);
+                Route::delete('pageContents/{pageContent}', [PageContentController::class, 'destroy']);
+            });
         });
     }
 

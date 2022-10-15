@@ -6,6 +6,7 @@
                 <p class="mt-2 text-sm text-gray-700">Itt tudja megtekinteni a felhasználókat, új felhasználót létrehozni szerkeszteni és törölni a meglévőket.</p>
             </div>
 
+            @if (! (auth()->user()->is_guest_writer))
             <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
                 <a
                     href="/admin/users/create"
@@ -15,6 +16,7 @@
                     Új felhasználó
                 </a>
             </div>
+            @endif
         </div>
 
         <div class="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
