@@ -100,5 +100,7 @@ return [
         'name' => 'név',
         'content' => 'szöveg',
         'email' => 'e-mail',
+        'current_password' => 'jelenlegi jelszó',
+        'password' => 'jelszó',
     ],
 ];
