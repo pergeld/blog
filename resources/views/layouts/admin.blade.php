@@ -45,7 +45,9 @@
                         </button>
 
                         <!-- Profile dropdown -->
-                        <dashboard-dropdown></dashboard-dropdown>
+                        <dashboard-dropdown
+                            auth-user-profile-picture="{{ asset(auth()->user()->getProfilePicture()) }}"
+                        ></dashboard-dropdown>
                     </div>
                 </div>
             </div>

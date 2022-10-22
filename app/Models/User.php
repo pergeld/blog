@@ -49,4 +49,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Article::class);
     }
+
+    public function getProfilePicture()
+    {
+        $image = $this->profile_picture;
+
+        if (empty($image)) {
+            return 'images/user.png';
+        }
+
+        return 'storage/' . $this->profile_picture;
+    }
 }
