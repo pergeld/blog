@@ -28,6 +28,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'max:255',
                 Rule::unique('users')->ignore($user->id),
             ],
+
+            'content' => ['nullable', 'string', 'max:1200'],
         ])->validate();
 
         if ($input['email'] !== $user->email &&
@@ -37,6 +39,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->forceFill([
                 'name' => $input['name'],
                 'email' => $input['email'],
+                'content' => $input['content'],
             ])->save();
         }
     }
@@ -54,6 +57,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'name' => $input['name'],
             'email' => $input['email'],
             'email_verified_at' => null,
+            'content' => $input['content'],
         ])->save();
 
         $user->sendEmailVerificationNotification();

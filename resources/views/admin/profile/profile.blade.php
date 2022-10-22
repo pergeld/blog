@@ -49,6 +49,22 @@
                             </div>
 
                     </div>
+
+                    <div>
+                        <label for="content" class="block text-sm font-medium text-gray-700">Bemutatkozó szöveg</label>
+                        <textarea
+                            name="content"
+                            id="content"
+                            value="{{ old('content', auth()->user()->content) }}"
+                            rows="10"
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        ></textarea>
+
+                            <div class="mt-2 text-sm text-red-500">
+                                {{ $errors->first('content') }}
+                            </div>
+
+                    </div>
                 </div>
 
                 <div class="mt-6 flex-grow lg:mt-0 lg:ml-6 lg:flex-shrink-0 lg:flex-grow-0">

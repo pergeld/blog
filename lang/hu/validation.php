@@ -97,5 +97,8 @@ return [
     */
     'attributes' => [
         'title' => 'megnevezés',
+        'name' => 'név',
+        'content' => 'szöveg',
+        'email' => 'e-mail',
     ],
 ];
