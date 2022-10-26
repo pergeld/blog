@@ -22,11 +22,7 @@ class ArticleModuleServiceProvider extends ServiceProvider
             Route::post('articles/store', [ArticleController::class, 'store']);
             Route::get('articles/{article}/edit', [ArticleController::class, 'edit']);
             Route::post('articles/{article}', [ArticleController::class, 'update']);
-
-
-            Route::group(['middleware' => 'isnotguestwriter'], function () {
-                Route::delete('articles/{article}', [ArticleController::class, 'destroy']);
-            });
+            Route::delete('articles/{article}', [ArticleController::class, 'destroy']);
         });
     }
 

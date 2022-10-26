@@ -18,14 +18,11 @@ class TagModuleServiceProvider extends ServiceProvider
         // Register routes
         Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function () {
             Route::get('tags/list', [TagController::class, 'index']);
-
-            Route::group(['middleware' => 'isnotguestwriter'], function () {
-                Route::get('tags/create', [TagController::class, 'create']);
-                Route::post('tags/store', [TagController::class, 'store']);
-                Route::get('tags/{tag}/edit', [TagController::class, 'edit']);
-                Route::post('tags/{tag}', [TagController::class, 'update']);
-                Route::delete('tags/{tag}', [TagController::class, 'destroy']);
-            });
+            Route::get('tags/create', [TagController::class, 'create']);
+            Route::post('tags/store', [TagController::class, 'store']);
+            Route::get('tags/{tag}/edit', [TagController::class, 'edit']);
+            Route::post('tags/{tag}', [TagController::class, 'update']);
+            Route::delete('tags/{tag}', [TagController::class, 'destroy']);
         });
     }
 

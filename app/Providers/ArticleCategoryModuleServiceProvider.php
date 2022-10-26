@@ -18,14 +18,11 @@ class ArticleCategoryModuleServiceProvider extends ServiceProvider
         // Register routes
         Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function () {
             Route::get('articleCategories/list', [ArticleCategoryController::class, 'index']);
-
-            Route::group(['middleware' => 'isnotguestwriter'], function () {
-                Route::get('articleCategories/create', [ArticleCategoryController::class, 'create']);
-                Route::post('articleCategories/store', [ArticleCategoryController::class, 'store']);
-                Route::get('articleCategories/{articleCategory}/edit', [ArticleCategoryController::class, 'edit']);
-                Route::post('articleCategories/{articleCategory}', [ArticleCategoryController::class, 'update']);
-                Route::delete('articleCategories/{articleCategory}', [ArticleCategoryController::class, 'destroy']);
-            });
+            Route::get('articleCategories/create', [ArticleCategoryController::class, 'create']);
+            Route::post('articleCategories/store', [ArticleCategoryController::class, 'store']);
+            Route::get('articleCategories/{articleCategory}/edit', [ArticleCategoryController::class, 'edit']);
+            Route::post('articleCategories/{articleCategory}', [ArticleCategoryController::class, 'update']);
+            Route::delete('articleCategories/{articleCategory}', [ArticleCategoryController::class, 'destroy']);
         });
     }
 

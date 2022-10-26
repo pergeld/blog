@@ -25,7 +25,7 @@ class ArticleRequest extends FormRequest
     {
         return [
             'title' => ['required', 'max:100'],
-            'lead' => ['required', 'max:250'],
+            'lead' => ['required', 'max:500'],
             'published_date' => ['required'],
             'published_date' => ['required', 'date'],
             'published_time' => ['required', 'date_format:H:i'],

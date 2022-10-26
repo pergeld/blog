@@ -81,7 +81,7 @@
                                 <a href="/admin/articles/{{ $article->id }}/edit" class="inline-flex items-center justify-center rounded-md bg-green-600 px-4 py-2 my-4 2xl:my-0 mx-0 2xl:mx-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-none sm:w-auto">
                                     Szerkesztés
                                 </a>
-                                @if (! (auth()->user()->is_guest_writer))
+
                                 <form action="/admin/articles/{{ $article->id }}" method="POST" class="inline-flex items-center justify-center">
                                     @csrf
                                     @method('DELETE')
@@ -89,7 +89,7 @@
                                         Törlés
                                     </button>
                                 </form>
-                                @endif
+
                             </td>
                         </tr>
                     @empty
