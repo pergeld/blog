@@ -15,6 +15,7 @@
         HomeIcon,
         DocumentTextIcon,
         NewspaperIcon,
+        KeyIcon,
     } from '@heroicons/vue/24/outline'
     const navigation = [
         { name: 'Dashboard', href: '#', icon: HomeIcon, current: props.currentRouteName.includes('dashboard') ? true : false },
@@ -23,6 +24,7 @@
         { name: 'Címkék', href: '/admin/tags/list', icon: TagIcon, current: props.currentRouteName.includes('admin/tags/') ? true : false },
         { name: 'Tartalomkezelő', href: '/admin/pageContents/list', icon: DocumentTextIcon, current: props.currentRouteName.includes('admin/pageContents/') ? true : false },
         { name: 'Felhasználók', href: '/admin/users/list', icon: UsersIcon, current: props.currentRouteName.includes('admin/users/') ? true : false },
+        { name: 'Szerepkörök', href: '/admin/roles/list', icon: KeyIcon, current: props.currentRouteName.includes('admin/roles/') ? true : false },
     ]
     const props = defineProps(['currentRouteName'])
 </script>

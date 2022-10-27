@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -21,7 +22,9 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('admin.user.form');
+        $roles = Role::pluck('name', 'name')->all();
+
+        return view('admin.user.form', compact('roles'));
     }
 
     public function store(UserRequest $request)
@@ -38,6 +41,8 @@ class UserController extends Controller
         }
 
         $user->save();
+
+        $user->assignRole($request->get('roles'));
 
         session()->flash('successMessage');
         return redirect('/admin/users/list');

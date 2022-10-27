@@ -102,5 +102,6 @@ return [
         'email' => 'e-mail',
         'current_password' => 'jelenlegi jelszó',
         'password' => 'jelszó',
+        'permission' => 'engedély'
     ],
 ];

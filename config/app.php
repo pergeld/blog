@@ -186,6 +186,7 @@ return [
          * Package Service Providers...
          */
         App\Providers\FortifyServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -204,6 +205,7 @@ return [
         App\Providers\TagModuleServiceProvider::class,
         App\Providers\PageContentModuleServiceProvider::class,
         App\Providers\UserModuleServiceProvider::class,
+        App\Providers\RoleModuleServiceProvider::class,
     ],
 
     /*
