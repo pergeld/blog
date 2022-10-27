@@ -41,7 +41,7 @@ class RoleAndPermissionSeeder extends Seeder
         Permission::create(['name' => 'Szerepkör törlés']);
 
         $adminRole = Role::create(['name' => 'Admin']);
-        $editorRole = Role::create(['name' => 'Editor']);
+        $editorRole = Role::create(['name' => 'Szerkesztő']);
 
         $adminRole->givePermissionTo([
             'Hír létrehozás',
