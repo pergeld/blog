@@ -40,6 +40,7 @@ class RoleAndPermissionSeeder extends Seeder
         Permission::create(['name' => 'Szerepkör szerkesztés']);
         Permission::create(['name' => 'Szerepkör törlés']);
 
+        $superAdminRole = Role::create(['name' => 'Szuper admin']);
         $adminRole = Role::create(['name' => 'Admin']);
         $editorRole = Role::create(['name' => 'Szerkesztő']);
 
