@@ -16,7 +16,6 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('permission:Felhasználó létrehozás', ['only' => ['create', 'store']]);
-        $this->middleware('permission:Felhasználó módosítás', ['only' => ['edit', 'update']]);
         $this->middleware('permission:Felhasználó törlés', ['only' => ['destroy']]);
     }
 
@@ -50,6 +49,28 @@ class UserController extends Controller
         $user->save();
 
         $user->assignRole($request->get('roles'));
+
+        session()->flash('successMessage');
+        return redirect('/admin/users/list');
+    }
+
+    public function edit($userId)
+    {
+        $user = User::findOrFail($userId);
+        $roles = Role::pluck('name', 'name')->all();
+
+        return view('admin.user.role-edit-form', compact('user', 'roles'));
+    }
+
+    public function update(Request $request, $userId)
+    {
+        $this->validate($request, [
+            'roles' => ['required'],
+        ]);
+
+        $user = User::findOrFail($userId);
+
+        $user->syncRoles([$request->get('roles')]);
 
         session()->flash('successMessage');
         return redirect('/admin/users/list');

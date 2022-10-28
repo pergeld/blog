@@ -20,6 +20,8 @@ class UserModuleServiceProvider extends ServiceProvider
             Route::get('users/list', [UserController::class, 'index']);
             Route::get('users/create', [UserController::class, 'create']);
             Route::post('users/store', [UserController::class, 'store']);
+            Route::get('users/{user}/edit', [UserController::class, 'edit']);
+            Route::post('users/{user}', [UserController::class, 'update']);
             Route::view('profile/picture', 'admin.profile.picture');
             Route::post('profile/picture/change', [UserController::class, 'pictureChange']);
         });
