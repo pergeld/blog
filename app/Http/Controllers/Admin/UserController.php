@@ -13,6 +13,13 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:Felhasználó létrehozás', ['only' => ['create', 'store']]);
+        $this->middleware('permission:Felhasználó módosítás', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:Felhasználó törlés', ['only' => ['destroy']]);
+    }
+
     public function index()
     {
         $users = User::all();

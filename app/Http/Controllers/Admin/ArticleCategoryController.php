@@ -8,6 +8,13 @@ use App\Models\ArticleCategory;
 
 class ArticleCategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:Hír kategória létrehozás', ['only' => ['create', 'store']]);
+        $this->middleware('permission:Hír kategória szerkesztés', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:Hír kategória törlés', ['only' => ['destroy']]);
+    }
+
     public function index()
     {
         $articleCategories = ArticleCategory::all();

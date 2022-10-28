@@ -9,6 +9,13 @@ use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:Szerepkör létrehozás', ['only' => ['create', 'store']]);
+        $this->middleware('permission:Szerepkör szerkesztés', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:Szerepkör törlés', ['only' => ['destroy']]);
+    }
+
     public function index()
     {
         $roles = Role::all();

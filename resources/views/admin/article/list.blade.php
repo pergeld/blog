@@ -7,13 +7,15 @@
             </div>
 
             <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-                <a
-                    href="/admin/articles/create"
-                    type="button"
-                    class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-0 sm:w-auto"
-                >
-                    Új hír
-                </a>
+                @can('Hír létrehozás')
+                    <a
+                        href="/admin/articles/create"
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-0 sm:w-auto"
+                    >
+                        Új hír
+                    </a>
+                @endcan
             </div>
         </div>
 
@@ -78,17 +80,22 @@
                                 <a href="#" class="inline-flex items-center justify-center rounded-md bg-gray-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-none sm:w-auto">
                                     Előnézet
                                 </a>
-                                <a href="/admin/articles/{{ $article->id }}/edit" class="inline-flex items-center justify-center rounded-md bg-green-600 px-4 py-2 my-4 2xl:my-0 mx-0 2xl:mx-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-none sm:w-auto">
-                                    Szerkesztés
-                                </a>
 
-                                <form action="/admin/articles/{{ $article->id }}" method="POST" class="inline-flex items-center justify-center">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="inline-flex items-center justify-center rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-none sm:w-auto">
-                                        Törlés
-                                    </button>
-                                </form>
+                                @can('Hír szerkesztés')
+                                    <a href="/admin/articles/{{ $article->id }}/edit" class="inline-flex items-center justify-center rounded-md bg-green-600 px-4 py-2 my-4 2xl:my-0 mx-0 2xl:mx-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-none sm:w-auto">
+                                        Szerkesztés
+                                    </a>
+                                @endcan
+
+                                @can('Hír törlés')
+                                    <form action="/admin/articles/{{ $article->id }}" method="POST" class="inline-flex items-center justify-center">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="inline-flex items-center justify-center rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-none sm:w-auto">
+                                            Törlés
+                                        </button>
+                                    </form>
+                                @endcan
 
                             </td>
                         </tr>

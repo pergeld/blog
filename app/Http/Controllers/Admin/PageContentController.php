@@ -8,6 +8,13 @@ use App\Models\PageContent;
 
 class PageContentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:Tartalomkezelő létrehozás', ['only' => ['create', 'store']]);
+        $this->middleware('permission:Tartalomkezelő szerkesztés', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:Tartalomkezelő törlés', ['only' => ['destroy']]);
+    }
+
     public function index()
     {
         $pageContents = PageContent::all();

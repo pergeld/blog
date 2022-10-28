@@ -12,6 +12,13 @@ use Illuminate\Support\Str;
 
 class ArticleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:Hír létrehozás', ['only' => ['create', 'store', 'imageUploading', 'imageDelete', 'saveTags']]);
+        $this->middleware('permission:Hír szerkesztés', ['only' => ['edit', 'update', 'imageUploading', 'imageDelete', 'saveTags']]);
+        $this->middleware('permission:Hír törlés', ['only' => ['destroy']]);
+    }
+
     public function index()
     {
         $articles = Article::orderBy('published_at', 'desc')->get();

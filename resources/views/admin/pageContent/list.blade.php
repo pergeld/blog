@@ -7,13 +7,15 @@
             </div>
 
             <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-                <a
-                    href="/admin/pageContents/create"
-                    type="button"
-                    class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-0 sm:w-auto"
-                >
-                    Új tartalom
-                </a>
+                @can('Tartalomkezelő létrehozás')
+                    <a
+                        href="/admin/pageContents/create"
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-0 sm:w-auto"
+                    >
+                        Új tartalom
+                    </a>
+                @endcan
             </div>
         </div>
 
@@ -33,16 +35,20 @@
                                 {{ $pageContent->title }}
                             </td>
                             <td class="flex flex-col 2xl:flex-row justify-end items-end py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                <a href="/admin/pageContents/{{ $pageContent->id }}/edit" class="inline-flex items-center justify-center rounded-md bg-green-600 px-4 py-2 my-4 2xl:my-0 mx-0 2xl:mx-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-none sm:w-auto">
-                                    Szerkesztés
-                                </a>
-                                <form action="/admin/pageContents/{{ $pageContent->id }}" method="POST" class="inline-flex items-center justify-center">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="inline-flex items-center justify-center rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-none sm:w-auto">
-                                        Törlés
-                                    </button>
-                                </form>
+                                @can('Tartalomkezelő szerkesztés')
+                                    <a href="/admin/pageContents/{{ $pageContent->id }}/edit" class="inline-flex items-center justify-center rounded-md bg-green-600 px-4 py-2 my-4 2xl:my-0 mx-0 2xl:mx-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-none sm:w-auto">
+                                        Szerkesztés
+                                    </a>
+                                @endcan
+                                @can('Tartalomkezelő törlés')
+                                    <form action="/admin/pageContents/{{ $pageContent->id }}" method="POST" class="inline-flex items-center justify-center">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="inline-flex items-center justify-center rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-none sm:w-auto">
+                                            Törlés
+                                        </button>
+                                    </form>
+                                @endcan
                             </td>
                         </tr>
                     @empty

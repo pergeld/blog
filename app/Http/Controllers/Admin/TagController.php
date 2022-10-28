@@ -8,6 +8,13 @@ use App\Models\Tag;
 
 class TagController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:Címke létrehozás', ['only' => ['create', 'store']]);
+        $this->middleware('permission:Címke szerkesztés', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:Címke törlés', ['only' => ['destroy']]);
+    }
+
     public function index()
     {
         $tags = Tag::all();
