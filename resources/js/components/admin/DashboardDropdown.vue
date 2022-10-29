@@ -1,7 +1,7 @@
 <template>
-    <Menu as="div" class="relative ml-3">
+    <Menu as="div" class="relative ml-3 mr-3">
         <div>
-            <MenuButton class="flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <MenuButton class="flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-0">
                 <span class="sr-only">Open user menu</span>
                 <img class="h-8 w-8 rounded-full" :src="this.authUserProfilePicture" alt="" />
             </MenuButton>
@@ -27,6 +27,5 @@
     const userNavigation = [
         { name: 'Profil', href: '/profile' },
         { name: 'Beállítások', href: '#' },
-        { name: 'Kijelentkezés', href: '#' },
     ]
 </script>
