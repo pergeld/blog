@@ -11,7 +11,7 @@
                     <a
                         href="/admin/roles/create"
                         type="button"
-                        class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-0 sm:w-auto"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-0 sm:w-auto"
                     >
                         Új szerepkör
                     </a>
@@ -21,10 +21,10 @@
 
         <div class="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
             <table class="min-w-full divide-y divide-gray-300">
-                <thead class="bg-gray-50">
+                <thead class="bg-gray-900">
                     <tr>
-                        <th scope="col" class="py-2.5 pl-4 pr-3 text-left text-sm font-medium uppercase text-gray-700 sm:pl-6">#</th>
-                        <th scope="col" class="px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-700">Megnevezés</th>
+                        <th scope="col" class="py-2.5 pl-4 pr-3 text-left text-sm font-medium uppercase text-gray-100 sm:pl-6">#</th>
+                        <th scope="col" class="px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-100">Megnevezés</th>
                         <th scope="col" class="relative py-2.5 pl-3 pr-4 sm:pr-6"></th>
                     </tr>
                 </thead>
@@ -40,18 +40,9 @@
                             </td>
                             <td class="flex flex-col 2xl:flex-row justify-end items-end py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                 @can('Szerepkör szerkesztés')
-                                    <a href="/admin/roles/{{ $role->id }}/edit" class="inline-flex items-center justify-center rounded-md bg-green-600 px-4 py-2 my-4 2xl:my-0 mx-0 2xl:mx-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-none sm:w-auto">
+                                    <a href="/admin/roles/{{ $role->id }}/edit" class="inline-flex items-center justify-center rounded-md bg-green-700 px-4 py-2 my-4 2xl:my-0 mx-0 2xl:mx-4 text-sm font-medium text-white shadow-sm hover:bg-green-900 focus:outline-none focus:ring-none sm:w-auto">
                                         Szerkesztés
                                     </a>
-                                @endcan
-                                @can('Szerepkör törlés')
-                                    <form action="/admin/roles/{{ $role->id }}" method="POST" class="inline-flex items-center justify-center">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="inline-flex items-center justify-center rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-none sm:w-auto">
-                                            Törlés
-                                        </button>
-                                    </form>
                                 @endcan
                             </td>
                         </tr>

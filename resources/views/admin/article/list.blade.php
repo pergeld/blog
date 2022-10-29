@@ -11,7 +11,7 @@
                     <a
                         href="/admin/articles/create"
                         type="button"
-                        class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-0 sm:w-auto"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-0 sm:w-auto"
                     >
                         Új hír
                     </a>
@@ -21,14 +21,14 @@
 
         <div class="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
             <table class="min-w-full divide-y divide-gray-300">
-                <thead class="bg-gray-50">
+                <thead class="bg-gray-900">
                     <tr>
-                        <th scope="col" class="py-2.5 pl-4 pr-3 text-left text-sm font-medium uppercase text-gray-700 sm:pl-6">Megnevezés</th>
-                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-700 xl:table-cell">Kategória</th>
-                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-700 xl:table-cell">Közzététel dátuma</th>
-                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-700 xl:table-cell">Megjelenés vége</th>
-                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-700 sm:table-cell">Szerző</th>
-                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-700 md:table-cell">Látható?</th>
+                        <th scope="col" class="py-2.5 pl-4 pr-3 text-left text-sm font-medium uppercase text-gray-100 sm:pl-6">Megnevezés</th>
+                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-100 xl:table-cell">Kategória</th>
+                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-100 xl:table-cell">Közzététel dátuma</th>
+                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-100 xl:table-cell">Megjelenés vége</th>
+                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-100 sm:table-cell">Szerző</th>
+                        <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-100 md:table-cell">Látható?</th>
                         <th scope="col" class="relative py-2.5 pl-3 pr-4 sm:pr-6"></th>
                     </tr>
                 </thead>
@@ -87,7 +87,7 @@
                                 </a>
 
                                 @can('Hír szerkesztés')
-                                    <a href="/admin/articles/{{ $article->id }}/edit" class="inline-flex items-center justify-center rounded-md bg-green-600 px-4 py-2 my-4 2xl:my-0 mx-0 2xl:mx-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-none sm:w-auto">
+                                    <a href="/admin/articles/{{ $article->id }}/edit" class="inline-flex items-center justify-center rounded-md bg-green-700 px-4 py-2 my-4 2xl:my-0 mx-0 2xl:mx-4 text-sm font-medium text-white shadow-sm hover:bg-green-900 focus:outline-none focus:ring-none sm:w-auto">
                                         Szerkesztés
                                     </a>
                                 @endcan
@@ -96,7 +96,7 @@
                                     <form action="/admin/articles/{{ $article->id }}" method="POST" class="inline-flex items-center justify-center">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="inline-flex items-center justify-center rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-none sm:w-auto">
+                                        <button class="inline-flex items-center justify-center rounded-md bg-red-700 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-900 focus:outline-none focus:ring-none sm:w-auto">
                                             Törlés
                                         </button>
                                     </form>

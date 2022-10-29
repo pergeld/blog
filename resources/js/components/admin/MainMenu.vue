@@ -1,7 +1,7 @@
 <template>
     <nav class="space-y-1 px-2">
-        <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-indigo-800 text-white' : 'text-indigo-100 hover:bg-indigo-600', 'group flex items-center px-2 py-2 text-base font-medium rounded-md']">
-            <component :is="item.icon" class="mr-4 h-6 w-6 flex-shrink-0 text-indigo-300" aria-hidden="true" />
+        <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-700 text-white' : 'text-gray-100 hover:bg-gray-800', 'group flex items-center px-2 py-2 text-base font-medium rounded-md']">
+            <component :is="item.icon" class="mr-4 h-6 w-6 flex-shrink-0 text-gray-100" aria-hidden="true" />
             {{ item.name }}
         </a>
     </nav>
