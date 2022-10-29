@@ -57,7 +57,12 @@
                                 <i>{{ $article->expires_at->translatedFormat('Y. F j. H:i') }}</i>
                             </td>
                             <td class="hidden px-2 py-4 text-sm text-gray-500 sm:table-cell">
-                                {{ optional($article->user)->name }}
+                                <div class="flex items-center">
+                                    <div class="h-8 w-8 flex-shrink-0">
+                                        <img class="h-8 w-8 rounded-full" src="{{ asset($article->user->getProfilePicture()) }}" alt="{{ optional($article->user)->name }}">
+                                    </div>
+                                    <div class="pl-2">{{ optional($article->user)->name }}</div>
+                                </div>
                             </td>
                             <td class="hidden px-2 py-4 text-sm text-gray-500 md:table-cell">
                                 @if ($article->is_visible)
