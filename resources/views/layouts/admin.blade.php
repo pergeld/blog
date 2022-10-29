@@ -15,6 +15,7 @@
     <div id="app">
         <dashboard-sidebar
             current-route-name="{{ Request::path() }}"
+            dashboard-route-name="{{ route('admin.dashboard') }}"
         ></dashboard-sidebar>
 
         <!-- Static sidebar for desktop -->
@@ -22,7 +23,10 @@
             <!-- Sidebar component, swap this element with another sidebar if you like -->
             <div class="flex flex-grow flex-col overflow-y-auto bg-gray-900 pt-5">
                 <div class="flex flex-shrink-0 items-center px-4">
-                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300" alt="Your Company">
+                    <a href="{{ route('admin.dashboard') }}" class="flex flex-shrink-0 items-center">
+                        <img class="h-8 w-auto" src="{{ asset('images/admin-logo.png') }}" alt="Your Company">
+                        <div class="text-gray-100 text-md pl-3">Leaf admin</div>
+                    </a>
                 </div>
                 <div class="mt-5 flex flex-1 flex-col">
                     <main-menu

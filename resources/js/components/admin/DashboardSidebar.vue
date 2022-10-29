@@ -16,7 +16,10 @@
                 </div>
               </TransitionChild>
               <div class="flex flex-shrink-0 items-center px-4">
-                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300" alt="Your Company" />
+                <a :href="this.dashboardRouteName" class="flex flex-shrink-0 items-center">
+                    <img class="h-8 w-auto" src="/images/admin-logo.png" alt="Your Company" />
+                    <div class="text-gray-100 text-md pl-3">Leaf admin</div>
+                </a>
               </div>
               <div class="mt-5 h-0 flex-1 overflow-y-auto">
                 <main-menu
@@ -51,5 +54,5 @@
         XMarkIcon,
     } from '@heroicons/vue/24/outline'
     const sidebarOpen = ref(false)
-    const props = defineProps(['currentRouteName'])
+    const props = defineProps(['currentRouteName', 'dashboardRouteName'])
 </script>
