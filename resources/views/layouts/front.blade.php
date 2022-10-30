@@ -10,12 +10,9 @@
 
     @vite('resources/css/app.css')
 </head>
-<body>
+<body class="relative overflow-hidden bg-body text-white pb-12">
     <div id="app">
-        <div>
-            Nav goes here for front layout
-        </div>
-
+        @include('partials.header')
         <div>
             {{ $slot }}
         </div>
