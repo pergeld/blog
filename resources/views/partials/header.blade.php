@@ -3,11 +3,11 @@
         <div class="text-lg font-bold">Logo helye</div>
 
         <div class="hidden md:flex space-x-12 items-center">
-            <a href="#" class="text-selected-text">Kezdőlap</a>
-            <a href="#">Blog</a>
-            <a href="#">Kategóriák</a>
-            <a href="#">Rólunk</a>
-            <a href="#">Csapat</a>
+            <a href="#" class="text-selected-text duration-300 hover:text-selected-text">Kezdőlap</a>
+            <a href="#" class="duration-300 hover:text-selected-text">Blog</a>
+            <a href="#" class="duration-300 hover:text-selected-text">Témák</a>
+            <a href="#" class="duration-300 hover:text-selected-text">Rólunk</a>
+            <a href="#" class="duration-300 hover:text-selected-text">Csapat</a>
         </div>
 
         <div class="md:hidden">
