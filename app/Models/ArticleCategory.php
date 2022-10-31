@@ -13,10 +13,12 @@ class ArticleCategory extends Model
         'title',
         'is_visible',
         'image_upload',
+        'is_highlighted',
     ];
 
     protected $casts = [
         'is_visible' => 'boolean',
+        'is_highlighted' => 'boolean',
     ];
 
     public function articles()

@@ -25,6 +25,7 @@
                     <tr>
                         <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-medium uppercase text-gray-100 sm:pl-6">Megnevezés</th>
                         <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-medium uppercase text-gray-100 md:table-cell">Látható?</th>
+                        <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-medium uppercase text-gray-100 md:table-cell">Kiemelt?</th>
                         <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6"></th>
                     </tr>
                 </thead>
@@ -49,6 +50,23 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                         Nem látható
+                                    </div>
+                                @endif
+                            </td>
+                            <td class="hidden px-3 py-4 text-sm text-gray-500 md:table-cell">
+                                @if ($articleCategory->is_highlighted)
+                                    <div class="flex text-green-500">
+                                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        Kiemelt
+                                    </div>
+                                @else
+                                    <div class="flex text-red-500">
+                                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        Nem kiemelt
                                     </div>
                                 @endif
                             </td>

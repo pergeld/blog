@@ -41,6 +41,10 @@ class ArticleCategoryController extends Controller
             $articleCategory->is_visible = false;
         }
 
+        if (! $request->boolean('is_highlighted')) {
+            $articleCategory->is_highlighted = false;
+        }
+
         if ($request->imageUpload) {
             $this->imageUploading($request->imageUpload, $articleCategory);
         }
@@ -72,6 +76,10 @@ class ArticleCategoryController extends Controller
 
         if (! $request->boolean('is_visible')) {
             $articleCategory->is_visible = false;
+        }
+
+        if (! $request->boolean('is_highlighted')) {
+            $articleCategory->is_highlighted = false;
         }
 
         if ($request->imageUpload && $request->boolean('change_picture') == true) {

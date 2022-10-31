@@ -18,6 +18,7 @@ class ArticleCategoryResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'is_visible' => $this->is_visible,
+            'is_highlighted' => $this->is_highlighted,
             'image_upload' => $this->image_upload,
         ];
     }

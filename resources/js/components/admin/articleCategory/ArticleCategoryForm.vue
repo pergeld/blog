@@ -58,6 +58,31 @@
                 </div>
             </div>
 
+
+            <div class="bg-gray-50 px-4 py-6 shadow sm:rounded-lg sm:p-6">
+                <div class="xl:grid xl:grid-cols-3 xl:gap-6">
+                    <div class="xl:col-span-1">
+                        <h3 class="text-lg font-medium leading-6 text-gray-900">Kiemelés</h3>
+                        <p class="mt-1 text-sm text-gray-500">A kiemelt hír kategóriák jelennek meg a nyitóoldalon..</p>
+                    </div>
+                    <div class="mt-5 space-y-6 xl:col-span-2 xl:mt-0">
+
+                        <div class="text-base font-medium text-gray-900" aria-hidden="true">Kiemelés</div>
+
+                        <div class="flex items-start">
+                            <div class="flex h-5 items-center">
+                                <input id="is_highlighted" name="isis_highlighted_visible" v-model="formData.is_highlighted" type="checkbox" value="1" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:outline-none focus:ring-0">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="is_highlighted" class="font-medium text-gray-700">Kiemelet?</label>
+                                <p class="text-gray-500">Jelöld be az alábbi checkboxot ahhoz, hogy a hír kategória kiemelt legyen, és megjelenjen a nyitóoldalon.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
             <div class="bg-gray-50 px-4 py-6 shadow sm:rounded-lg sm:p-6">
                 <div class="xl:grid xl:grid-cols-3 xl:gap-6">
                     <div class="xl:col-span-1">
@@ -146,6 +171,7 @@ export default {
             formData: {
                 title: this.articleCategory.title,
                 is_visible: this.articleCategory.is_visible ? true : false,
+                is_highlighted: this.articleCategory.is_highlighted ? true : false,
                 imageUpload: this.articleCategory.image_upload,
                 change_picture: false,
             },
