@@ -38,7 +38,17 @@
 
         <div class="flex flex-1 flex-col lg:pl-64">
             <div class="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white shadow">
-                <div class="flex flex-1 justify-end px-4">
+                <div class="flex flex-1 justify-between px-4">
+
+                    <div class="flex items-center">
+                        <a
+                        href="{{ route('home') }}"
+                        target="_blank"
+                        class="hidden lg:inline-flex items-center justify-center rounded-md border border-transparent bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-0 sm:w-auto"
+                    >
+                        Oldal megtekintése
+                    </a>
+                    </div>
 
                     <div class="ml-4 flex items-center lg:ml-6">
                         <button type="button" class="rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-0">
