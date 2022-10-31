@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\ArticleCategoryRepository;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(ArticleCategoryRepository $articleCategoryRepository)
     {
-        return view('home');
+        $articleCategories = $articleCategoryRepository->getHighlightedArticleCategories();
+
+        return view('home', compact('articleCategories'));
     }
 }

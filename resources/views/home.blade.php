@@ -1,5 +1,4 @@
 <x-front-layout>
-    <div class="container mt-16 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24">
-        @include('partials.home.banner')
-    </div>
+    @include('partials.home.banner')
+    @includeWhen($articleCategories->isNotEmpty(), 'partials.home.home-articlecategory')
 </x-front-layout>

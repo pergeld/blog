@@ -74,7 +74,7 @@
                                 <input id="is_highlighted" name="isis_highlighted_visible" v-model="formData.is_highlighted" type="checkbox" value="1" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:outline-none focus:ring-0">
                             </div>
                             <div class="ml-3 text-sm">
-                                <label for="is_highlighted" class="font-medium text-gray-700">Kiemelet?</label>
+                                <label for="is_highlighted" class="font-medium text-gray-700">Kiemelt?</label>
                                 <p class="text-gray-500">Jelöld be az alábbi checkboxot ahhoz, hogy a hír kategória kiemelt legyen, és megjelenjen a nyitóoldalon.</p>
                             </div>
                         </div>

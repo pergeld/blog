@@ -25,4 +25,15 @@ class ArticleCategory extends Model
     {
         return $this->hasMany(Article::class);
     }
+
+    public function getCoverPicture()
+    {
+        $image = $this->image_upload;
+
+        if (empty($image)) {
+            return 'images/user.png';
+        }
+
+        return 'storage/' . $image;
+    }
 }
