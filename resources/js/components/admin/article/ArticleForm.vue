@@ -293,7 +293,7 @@ export default {
                 title: this.article.title,
                 lead: this.article.lead,
                 content: this.article.content,
-                is_visible: true,
+                is_visible: this.article.is_visible ? true : false,
                 published_date: this.article.published_date,
                 published_time: this.article.published_time,
                 expires_date: this.article.expires_date,

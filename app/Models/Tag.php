@@ -13,4 +13,8 @@ class Tag extends Model
         'title',
         'is_visible',
     ];
+
+    protected $casts = [
+        'is_visible' => 'boolean',
+    ];
 }

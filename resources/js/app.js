@@ -12,6 +12,7 @@ import SuccessNotification from './components/admin/notification/SuccessNotifica
 import ArticleForm from './components/admin/article/ArticleForm.vue';
 import PageContentForm from './components/admin/pageContent/PageContentForm.vue';
 import ProfilePicture from './components/admin/user/ProfilePicture.vue';
+import ArticleCategoryForm from './components/admin/articleCategory/ArticleCategoryForm.vue';
 
 createApp({
     components: {
@@ -22,5 +23,6 @@ createApp({
         SuccessNotification,
         PageContentForm,
         ProfilePicture,
+        ArticleCategoryForm,
     },
 }).mount("#app")

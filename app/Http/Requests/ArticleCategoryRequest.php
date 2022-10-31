@@ -25,6 +25,7 @@ class ArticleCategoryRequest extends FormRequest
     {
         return [
             'title' => ['required', 'max:100'],
+            'imageUpload' => ['nullable', 'string'],
         ];
     }
 }

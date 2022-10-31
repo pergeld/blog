@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleCategoryRequest;
 use App\Models\ArticleCategory;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ArticleCategoryController extends Controller
 {
@@ -39,10 +41,14 @@ class ArticleCategoryController extends Controller
             $articleCategory->is_visible = false;
         }
 
+        if ($request->imageUpload) {
+            $this->imageUploading($request->imageUpload, $articleCategory);
+        }
+
         $articleCategory->save();
 
         session()->flash('successMessage');
-        return redirect('/admin/articleCategories/list');
+        return ['redirect' => '/admin/articleCategories/list'];
     }
 
     public function edit(int $articleCategoryId)
@@ -58,16 +64,24 @@ class ArticleCategoryController extends Controller
 
         $articleCategory = ArticleCategory::findOrFail($articleCategoryId);
 
+        if(! empty($articleCategory->image_upload) && $request->boolean('change_picture') == true) {
+            $this->imageDelete($articleCategory);
+        }
+
         $articleCategory->update($data);
 
         if (! $request->boolean('is_visible')) {
             $articleCategory->is_visible = false;
         }
 
+        if ($request->imageUpload && $request->boolean('change_picture') == true) {
+            $this->imageUploading($request->imageUpload, $articleCategory);
+        }
+
         $articleCategory->save();
 
         session()->flash('successMessage');
-        return redirect('/admin/articleCategories/list');
+        return ['redirect' => '/admin/articleCategories/list'];
     }
 
     public function destroy($articleCategoryId)
@@ -78,5 +92,18 @@ class ArticleCategoryController extends Controller
 
         session()->flash('deleteMessage');
         return redirect('/admin/articleCategories/list');
+    }
+
+    private function imageUploading($image, $articleCategory)
+    {
+        $newFilename = Str::after($image, 'tmp/');
+        Storage::disk('public')->move($image, "images/articleCategory/$newFilename");
+        $articleCategory->image_upload = "images/articleCategory/$newFilename";
+    }
+
+    private function imageDelete($articleCategory)
+    {
+        $oldFilename = $articleCategory->image_upload;
+        Storage::disk('public')->delete($oldFilename);
     }
 }

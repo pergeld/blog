@@ -12,6 +12,11 @@ class ArticleCategory extends Model
     protected $fillable = [
         'title',
         'is_visible',
+        'image_upload',
+    ];
+
+    protected $casts = [
+        'is_visible' => 'boolean',
     ];
 
     public function articles()

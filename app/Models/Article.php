@@ -28,6 +28,10 @@ class Article extends Model
         'expires_at',
     ];
 
+    protected $casts = [
+        'is_visible' => 'boolean',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
