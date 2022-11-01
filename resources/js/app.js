@@ -2,6 +2,8 @@ import './bootstrap';
 
 import { createApp } from 'vue/dist/vue.esm-bundler.js';
 
+import './core/index';
+
 // Admin Layouts
 import DashboardDropdown from './components/admin/DashboardDropdown.vue';
 import DashboardSidebar from './components/admin/DashboardSidebar.vue';

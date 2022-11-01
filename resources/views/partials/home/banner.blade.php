@@ -6,11 +6,11 @@
                     <span class="bg-black px-2 py-1 rounded-md ml-10 opacity-0">Kezdőlap</span>
                 </a>
 
-                <a href="#" class="nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body">
+                <a href="#category" class="nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body">
                     <span class="bg-black px-2 py-1 rounded-md ml-10 opacity-0">Témák</span>
                 </a>
 
-                <a href="#" class="nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body">
+                <a href="#articles" class="nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body">
                     <span class="bg-black px-2 py-1 rounded-md ml-10 opacity-0">Bejegyzések</span>
                 </a>
 
