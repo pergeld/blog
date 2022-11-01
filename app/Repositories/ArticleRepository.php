@@ -10,7 +10,7 @@ class ArticleRepository
     {
         $locale = app()->getLocale();
 
-        return Article::where('is_visible', true)
+        return Article::published()
             ->latest('published_at')
             ->limit(4)
             ->get();
