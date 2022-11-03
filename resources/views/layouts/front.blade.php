@@ -10,7 +10,7 @@
 
     @vite('resources/css/app.css')
 </head>
-<body class="relative bg-body text-white pb-12">
+<body class="relative bg-white text-gray-900 pb-12">
     <div id="app">
         @include('partials.header')
         <div>
