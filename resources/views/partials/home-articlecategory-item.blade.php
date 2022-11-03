@@ -1,7 +1,9 @@
-<a href="#" class="group aspect-w-10 aspect-h-12 block w-full overflow-hidden rounded-lg @if($loop->index % 2 == 0) rotate-2 @else -rotate-2 @endif">
-    <img src="{{ $articleCategory->getCoverPicture() }}" alt="{{ $articleCategory->title }}" class="pointer-events-none w-full h-full inset-0 absolute object-cover group-hover:blur-lg duration-300">
+<a href="#" class="group relative rounded-2xl border border-gray-200 p-8 duration-300 hover:bg-blue-50 hover:border-gray-50">
+    <img src="{{ $articleCategory->getCoverPicture() }}" alt="{{ $articleCategory->title }}" class="h-12 w-12">
 
-    <div class="absolute top-50 z-10 text-3xl duration-300 opacity-0 group-hover:opacity-100">
-        {{ $articleCategory->title }}
-    </div>
+    <h3 class="mt-6 font-semibold text-base text-gray-900">{{ $articleCategory->title }}</h3>
+
+    <p class="mt-1 text-sm text-gray-700">
+        Step-by-step guides to setting up your system and installing the library.
+    </p>
 </a>

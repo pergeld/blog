@@ -86,9 +86,9 @@
             <div class="bg-gray-50 px-4 py-6 shadow sm:rounded-lg sm:p-6">
                 <div class="xl:grid xl:grid-cols-3 xl:gap-6">
                     <div class="xl:col-span-1">
-                        <h3 class="text-lg font-medium leading-6 text-gray-900">Borítókép</h3>
-                        <p class="mt-1 text-sm text-gray-500">A hír kategória borítóképe. Megadása nem kötelező, de ajánlott.</p>
-                        <p class="mt-1 text-sm text-gray-500">A borítóképe minimum mérete: <strong>800x600</strong> px.</p>
+                        <h3 class="text-lg font-medium leading-6 text-gray-900">Ikon</h3>
+                        <p class="mt-1 text-sm text-gray-500">A hír kategória ikonja. Megadása nem kötelező, de ajánlott.</p>
+                        <p class="mt-1 text-sm text-gray-500">Az ikon minimum mérete: <strong>20x20</strong> px.</p>
                         <p class="mt-1 text-sm text-gray-500">Feltölthető fájlformátumok: <strong>jpg, png</strong>.</p>
                         <p class="mt-1 text-sm text-gray-500">Maximum 1 darab kép tölthető fel.</p>
                         <p class="mt-1 text-sm text-gray-500">A fájl mérete maximum: <strong>2 MB</strong>.</p>
@@ -106,8 +106,8 @@
                             max-file-size="2MB"
                             label-max-file-size-exceeded="A fájl túl nagy méretű"
                             label-max-file-size="A maximum fájl méret: {filesize}"
-                            image-validate-size-min-width="800"
-                            image-validate-size-min-height="600"
+                            image-validate-size-min-width="20"
+                            image-validate-size-min-height="20"
                             image-validate-size-label-image-size-too-small="A kép mérete nem megfelelő"
                             image-validate-size-label-expected-min-size="A kép minimum mérete {minWidth} x {minHeight} px"
                             @removefile="removeFile"

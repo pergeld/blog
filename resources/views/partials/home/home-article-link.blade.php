@@ -1,4 +1,4 @@
-<div id="home-article-link" class="overflow-hidden bg-gray-900 mt-32">
+<section id="home-article-link" class="overflow-hidden bg-gray-900 mt-32">
     <div class="py-16 sm:px-2 lg:relative lg:py-20 lg:px-0">
         <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 px-4 lg:max-w-7xl lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
             <div class="relative z-10 md:text-center lg:text-left">
@@ -28,4 +28,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>
