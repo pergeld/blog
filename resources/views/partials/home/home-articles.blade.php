@@ -1,11 +1,25 @@
-<div class="container mt-64 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full">
-    <section class="w-full">
-        <h2 id="articles" class="secondary-title">Bejegyzések</h2>
+<section class="pb-20 sm:pb-32">
+    <div class="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
+        <h2 class="inline-flex items-center rounded-full py-2 px-6 text-blue-600 ring-1 ring-inset ring-blue-600">
+            <span class="text-base font-medium tracking-tight">Blog</span>
+        </h2>
 
-        <div class="space-y-12 sm:space-y-16 my-16 bg-white rounded sm:rounded-xl p-8 sm:p-16">
-            @foreach ($articles as $article)
-                @include('partials.home-article-item')
-            @endforeach
+        <p class="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
+            Olvasd el a legújabb bejegyzéseket.
+        </p>
+
+        <p class="mt-4 text-lg tracking-tight text-slate-700">
+            Vagy böngész további bejegyzéseink közül, különböző témákban, időrendi sorrendben.
+        </p>
+    </div>
+
+    <div class="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12 mt-16">
+        <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+            <div class="flex max-w-3xl flex-col space-y-16">
+                @foreach ($articles as $article)
+                    @include('partials.article-item')
+                @endforeach
+            </div>
         </div>
-    </section>
-</div>
+    </div>
+</section>
