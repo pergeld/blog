@@ -16,6 +16,7 @@
         <div>
             {{ $slot }}
         </div>
+        @include('partials.footer')
     </div>
 
     @vite('resources/js/app.js')

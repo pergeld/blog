@@ -4,11 +4,11 @@
             <span class="text-base font-medium tracking-tight">Témáink</span>
         </h2>
 
-        <p class="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
+        <p class="mt-8 font-display text-4xl font-bold tracking-tight text-gray-900">
             Böngész a kiemelt témáink között, vagy válasz a többi témánkból.
         </p>
 
-        <p class="mt-4 text-lg tracking-tight text-slate-700">
+        <p class="mt-4 text-lg tracking-tight text-gray-700">
             Rengeteg izgalmas téma közül választhatsz.
         </p>
     </div>
