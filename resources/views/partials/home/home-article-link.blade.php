@@ -24,7 +24,7 @@
             </div>
 
             <div class="relative lg:static xl:pl-10">
-
+                @include('partials.article-link-code')
             </div>
         </div>
     </div>
