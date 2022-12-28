@@ -1,5 +1,5 @@
 <x-front-layout>
-    <article class="mt-32 pb-20">
+    <article class="mt-24 pb-20">
         @if (! $article->isPublished())
             <div class="mx-auto md:max-w-2xl lg:max-w-4xl mb-12 -mt-12">
                 <div class="rounded-md bg-red-50 p-4">
@@ -26,10 +26,17 @@
                 {{ $article->title }}
             </p>
 
-            <p class="mt-6 border-l border-gray-300 pl-2 text-sm text-gray-400">
+            <p class="flex items-center mt-6 border-l border-gray-300 pl-2 text-sm text-gray-400">
                 <time datetime="{{ $article->published_at->format('Y-m-d H:i') }}">
                     {{ $article->published_at->translatedFormat('Y. F j.') }}
                 </time>
+
+                <svg class="mx-2 h-2 w-2 text-gray-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+
+                <img class="h-8 w-8 rounded-full" src="{{ asset($article->user->getProfilePicture()) }}" alt="{{ optional($article->user)->name }}">
+                <a href="#" class="pl-2">{{ optional($article->user)->name }}</a>
             </p>
 
             <div class="mt-6 text-gray-600">
