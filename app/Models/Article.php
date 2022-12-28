@@ -48,6 +48,23 @@ class Article extends Model
         return $this->belongsToMany(Tag::class);
     }
 
+    public function isPublished()
+    {
+        if (! $this->is_visible) {
+            return false;
+        }
+
+        if ($this->published_at > Carbon::now()) {
+            return false;
+        }
+
+        if ($this->expires_at && $this->expires_at <= Carbon::now()) {
+            return false;
+        }
+
+        return true;
+    }
+
     public function scopePublished($builder)
     {
         $builder->where('is_visible', true)
@@ -56,5 +73,21 @@ class Article extends Model
                 $q->where('expires_at', '>', Carbon::now())
                     ->orWhereNull('expires_at');
             });
+    }
+
+    public function getLink()
+    {
+        return route('articles.show', ['article' => $this->slug]);
+    }
+
+    public function getCover()
+    {
+        $image = $this->imageUpload;
+
+        if (empty($image)) {
+            return null;
+        }
+
+        return '/storage/' . $image;
     }
 }

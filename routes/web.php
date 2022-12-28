@@ -18,7 +18,10 @@ use App\Http\Controllers\ArticleController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
+Route::controller(ArticleController::class)->group(function () {
+    Route::get('/articles', 'index')->name('articles');
+    Route::get('/articles/{article}', 'show')->name('articles.show');
+});
 
 Route::middleware(['auth'])->get('/dashboard', function () {
     return view('admin.dashboard');

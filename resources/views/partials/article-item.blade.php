@@ -2,7 +2,7 @@
     <div class="md:col-span-3 group relative flex flex-col items-start">
         <h2 class="text-base font-semibold tracking-tight text-gray-800 dark:text-gray-100">
             <div class="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-gray-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-gray-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-            <a href="#">
+            <a href="{{ $article->getLink() }}">
                 <span class="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                 <span class="relative z-10">{{ $article->title }}</span>
             </a>
