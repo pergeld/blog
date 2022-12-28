@@ -22,7 +22,7 @@
         <div class="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
             <table class="min-w-full divide-y divide-gray-300">
                 <thead class="bg-gray-900">
-                    <tr>
+                    <tr class="border-l-4 border-gray-900">
                         <th scope="col" class="py-2.5 pl-4 pr-3 text-left text-sm font-medium uppercase text-gray-100 sm:pl-6">Megnevezés</th>
                         <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-100 xl:table-cell">Kategória</th>
                         <th scope="col" class="hidden px-2 py-3.5 text-left text-sm font-medium uppercase text-gray-100 xl:table-cell">Közzététel dátuma</th>
@@ -36,7 +36,9 @@
                 <tbody class="divide-y divide-gray-200 bg-white">
                     @forelse ($articles as $article)
                         <tr>
-                            <td class="w-full max-w-0 py-4 pl-4 pr-2 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                            <td class="w-full max-w-0 py-4 pl-4 pr-2 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6
+                                border-l-4 @if($article->isPublished()) border-green-400 @else border-red-700 @endif
+                            ">
                                 {{ $article->title }}
                             <dl class="font-normal hidden sm:block xl:hidden">
                                 <dd class="mt-1 truncate text-gray-700">
