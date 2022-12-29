@@ -79,6 +79,8 @@ class ArticleController extends Controller
 
         $article = Article::findOrFail($articleId);
 
+        $article->slug = null;
+
         if(! empty($article->imageUpload) && $request->boolean('change_picture') == true) {
             $this->imageDelete($article);
         }

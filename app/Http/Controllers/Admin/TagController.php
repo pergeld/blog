@@ -58,6 +58,8 @@ class TagController extends Controller
 
         $tag = Tag::findOrFail($tagId);
 
+        $tag->slug = null;
+
         $tag->update($data);
 
         if (! $request->boolean('is_visible')) {

@@ -68,6 +68,8 @@ class ArticleCategoryController extends Controller
 
         $articleCategory = ArticleCategory::findOrFail($articleCategoryId);
 
+        $articleCategory->slug = null;
+
         if(! empty($articleCategory->image_upload) && $request->boolean('change_picture') == true) {
             $this->imageDelete($articleCategory);
         }
