@@ -1,4 +1,4 @@
-<a href="#" class="rounded-2xl border border-gray-200 p-8 hover:border-gray-500 duration-300">
+<a href="{{ $articleCategory->getLink() }}" class="rounded-2xl border border-gray-200 p-8 hover:border-gray-500 duration-300">
     <img
                 src="{{ $articleCategory->getCoverPicture() }}"
                 alt="{{ $articleCategory->title }}"

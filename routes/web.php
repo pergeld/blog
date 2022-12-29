@@ -26,6 +26,7 @@ Route::controller(ArticleController::class)->group(function () {
 
 Route::controller(ArticleCategoryController::class)->group(function () {
     Route::get('/articleCategories', 'index')->name('articleCategories');
+    Route::get('/articleCategories/{articleCategory}', 'show')->name('articleCategories.show');
 });
 
 Route::middleware(['auth'])->get('/dashboard', function () {

@@ -38,4 +38,9 @@ class ArticleCategory extends Model
 
         return 'storage/' . $image;
     }
+
+    public function getLink()
+    {
+        return route('articleCategories.show', ['articleCategory' => $this->slug]);
+    }
 }
