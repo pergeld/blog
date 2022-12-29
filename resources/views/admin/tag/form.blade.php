@@ -43,6 +43,24 @@
                         </div>
 
                         <div>
+                            <label for="color" class="block text-sm font-medium text-gray-700">Szín</label>
+                            <select name="color" id="color" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" required>
+                                <option value="">- Kérem válasszon -</option>
+                                @foreach(\App\Enums\ColorType::asSelectArray() as $value => $description)
+                                    <option value="{{ $value }}"
+                                        @if(optional($tag->color)->is($value)) selected @endif
+                                    >
+                                        {{ $description }}
+                                    </option>
+                                @endforeach
+                            </select>
+
+                            <div class="mt-2 text-sm text-red-500">
+                                {{ $errors->first('color') }}
+                            </div>
+                        </div>
+
+                        <div>
                             <div class="flex items-start">
                                 <div class="flex h-5 items-center">
                                     <input

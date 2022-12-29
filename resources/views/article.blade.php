@@ -58,12 +58,7 @@
             @if (! empty($article->tags))
                 <div class="mt-12">
                     @foreach ($article->tags as $tag)
-                        <a href="#" class="inline-flex items-center rounded bg-blue-50 duration-200 hover:bg-blue-200 px-2 py-0.5 mr-2 text-sm font-medium text-blue-900">
-                            <svg class="mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                                <circle cx="4" cy="4" r="3" />
-                            </svg>
-                            {{ $tag->title }}
-                        </a>
+                        @include('partials.item-tag')
                     @endforeach
                 </div>
             @endif

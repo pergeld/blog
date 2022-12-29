@@ -2,9 +2,7 @@
     <div class="flex flex-col w-full justify-between leading-normal">
         <div>
             @foreach ($article->tags->take(3) as $tag)
-                <a href="#" class="inline-flex items-center rounded-lg bg-blue-50 duration-200 hover:bg-blue-200 px-2 py-0.5 mr-2 text-sm font-medium text-blue-900">
-                    {{ $tag->title }}
-                </a>
+                @include('partials.item-tag')
             @endforeach
         </div>
 

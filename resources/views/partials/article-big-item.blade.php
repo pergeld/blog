@@ -3,10 +3,8 @@
         <img class="rounded-t-lg" src="{{ $article->getCardCover() }}" alt="{{ $article->title }}" />
     </a>
     <div class="p-5">
-        @foreach ($article->tags->take(3) as $tag)
-            <a href="#" class="inline-flex items-center rounded-lg bg-blue-50 duration-200 hover:bg-blue-200 px-2 py-0.5 mr-2 text-sm font-medium text-blue-900">
-                {{ $tag->title }}
-            </a>
+        @foreach ($article->tags->take(4) as $tag)
+            @include('partials.item-tag')
         @endforeach
 
         <a href="{{ $article->getLink() }}" class="flex flex-col mt-4">
