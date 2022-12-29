@@ -80,6 +80,17 @@ class Article extends Model
         return route('articles.show', ['article' => $this->slug]);
     }
 
+    public function getCardCover()
+    {
+        $image = $this->imageUpload;
+
+        if (empty($image)) {
+            return null;
+        }
+
+        return '/storage/' . $image;
+    }
+
     public function getCover()
     {
         $image = $this->imageUpload;

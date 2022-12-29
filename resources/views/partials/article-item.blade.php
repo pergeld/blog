@@ -1,32 +1,37 @@
-<article class="md:grid md:grid-cols-4 md:items-baseline">
-    <div class="md:col-span-3 group relative flex flex-col items-start">
-        <h2 class="text-base font-semibold tracking-tight text-gray-800">
-            <div class="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-gray-100 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 duration-300 sm:-inset-x-6 sm:rounded-2xl"></div>
-            <a href="{{ $article->getLink() }}">
-                <span class="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-                <span class="relative z-10">{{ $article->title }}</span>
-            </a>
-        </h2>
+<div class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row p-4 hover:bg-gray-100 h-1/3">
+    <div class="flex flex-col w-full justify-between leading-normal">
+        <div>
+            @foreach ($article->tags->take(3) as $tag)
+                <a href="#" class="inline-flex items-center rounded-lg bg-blue-50 duration-200 hover:bg-blue-200 px-2 py-0.5 mr-2 text-sm font-medium text-blue-900">
+                    {{ $tag->title }}
+                </a>
+            @endforeach
+        </div>
 
-        <time
-            class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-gray-400 pl-3.5"
-            datetime="{{ $article->published_at->format('Y-m-d H:i') }}"
-        >
-            <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
-                <span class="h-4 w-0.5 rounded-full bg-gray-200"></span>
-            </span>
-            {{ $article->published_at->translatedFormat('Y. F j.') }}
-        </time>
+        <a href="{{ $article->getLink() }}">
+            <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $article->title }}</h5>
 
-        <p class="relative z-10 mt-2 text-sm text-gray-600">
-            {{ $article->lead }}
-        </p>
+            @if (Route::currentRouteName() != 'home')
+                <p class="text-gray-500">
+                    {{ $article->lead }}
+                </p>
+            @endif
+
+            <div class="flex items-center mt-4">
+                <img class="h-6 w-6 rounded-full mr-2" src="{{ asset($article->user->getProfilePicture()) }}" alt="{{ optional($article->user)->name }}">
+
+                <div class="text-xs font-semibold">{{ optional($article->user)->name }}</div>
+
+                <svg class="mx-1.5 h-1 w-1 text-gray-500" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+
+                <time datetime="{{ $article->published_at->format('Y-m-d H:i') }}" class="text-gray-800 text-xs">
+                    {{ $article->published_at->translatedFormat('Y. M j.') }}
+                </time>
+            </div>
+        </a>
     </div>
 
-    <time
-        class="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-gray-400"
-        datetime="{{ $article->published_at->format('Y-m-d H:i') }}"
-    >
-        {{ $article->published_at->translatedFormat('Y. F j.') }}
-    </time>
-</article>
+    <img class="object-cover w-full rounded-lg h-full w-48" src="{{ $article->getCardCover() }}" alt="{{ $article->title }}">
+</div>

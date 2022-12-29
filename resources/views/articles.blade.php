@@ -10,13 +10,11 @@
             </p>
         </div>
 
-        <div class="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12 mt-16">
-            <div class="md:border-l md:border-gray-100 md:pl-6">
-                <div class="flex max-w-3xl flex-col space-y-16">
-                    @foreach ($articles as $article)
-                        @include('partials.article-item')
-                    @endforeach
-                </div>
+        <div class="mx-auto px-4 sm:px-6 md:px-4 max-w-3xl mt-16">
+            <div class="flex flex-col space-y-8">
+                @foreach ($articles as $article)
+                    @include('partials.article-item')
+                @endforeach
             </div>
 
             <div class="mt-16">
