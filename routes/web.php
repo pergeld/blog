@@ -17,30 +17,39 @@ use App\Http\Controllers\ArticleController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+/**
+ * Localized routes
+ */
 
-Route::controller(ArticleController::class)->group(function () {
-    Route::get('/articles', 'index')->name('articles');
-    Route::get('/articles/{article}', 'show')->name('articles.show');
-});
+Route::group([
+    'middleware' => ['localeSessionRedirect', 'localizationRedirect'],
+    'prefix' => LaravelLocalization::setLocale()
+], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::controller(ArticleCategoryController::class)->group(function () {
-    Route::get('/articleCategories', 'index')->name('articleCategories');
-    Route::get('/articleCategories/{articleCategory}', 'show')->name('articleCategories.show');
-});
+    Route::controller(ArticleController::class)->group(function () {
+        Route::get(LaravelLocalization::transRoute('routes.articles'), 'index')->name('articles');
+        Route::get(LaravelLocalization::transRoute('routes.articles') . '/{article}', 'show')->name('articles.show');
+    });
 
-Route::middleware(['auth'])->get('/dashboard', function () {
-    return view('admin.dashboard');
-})->name('admin.dashboard');
+    Route::controller(ArticleCategoryController::class)->group(function () {
+        Route::get(LaravelLocalization::transRoute('routes.articleCategories'), 'index')->name('articleCategories');
+        Route::get(LaravelLocalization::transRoute('routes.articleCategories') . '/{articleCategory}', 'show')->name('articleCategories.show');
+    });
 
-Route::middleware(['auth', 'verified'])->get('/profile', function () {
-    return view('admin.profile.profile');
-})->name('profile');
+    Route::middleware(['auth'])->get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
 
-Route::middleware(['auth', 'verified'])->get('/password', function () {
-    return view('admin.profile.password');
-})->name('password');
+    Route::middleware(['auth', 'verified'])->get('/profile', function () {
+        return view('admin.profile.profile');
+    })->name('profile');
 
-Route::middleware(['web', 'auth'])->group(function () {
-    Route::post('/upload', [UploadController::class, 'upload']);
+    Route::middleware(['auth', 'verified'])->get('/password', function () {
+        return view('admin.profile.password');
+    })->name('password');
+
+    Route::middleware(['web', 'auth'])->group(function () {
+        Route::post('/upload', [UploadController::class, 'upload']);
+    });
 });
