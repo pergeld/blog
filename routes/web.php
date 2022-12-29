@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\UploadController;
+use App\Http\Controllers\ArticleCategoryController;
 use App\Http\Controllers\ArticleController;
 
 /*
@@ -21,6 +22,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::controller(ArticleController::class)->group(function () {
     Route::get('/articles', 'index')->name('articles');
     Route::get('/articles/{article}', 'show')->name('articles.show');
+});
+
+Route::controller(ArticleCategoryController::class)->group(function () {
+    Route::get('/articleCategories', 'index')->name('articleCategories');
 });
 
 Route::middleware(['auth'])->get('/dashboard', function () {

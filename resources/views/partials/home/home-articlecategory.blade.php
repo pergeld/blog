@@ -16,7 +16,7 @@
     <div class="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8 mt-16">
         <ol role="list" class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 text-sm sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-3">
             @foreach ($articleCategories as $articleCategory)
-                @include('partials.home-articlecategory-item')
+                @include('partials.article-category-item')
             @endforeach
         </ol>
     </div>
