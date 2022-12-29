@@ -1,5 +1,5 @@
 <x-front-layout>
-    <article class="mt-24 pb-20">
+    <article class="mt-16 pb-20">
         @if (! $article->isPublished())
             <div class="mx-auto md:max-w-2xl lg:max-w-4xl mb-12 -mt-12">
                 <div class="rounded-md bg-red-50 p-4">

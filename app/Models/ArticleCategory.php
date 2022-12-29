@@ -2,18 +2,20 @@
 
 namespace App\Models;
 
+use App\Traits\Slugs;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class ArticleCategory extends Model
 {
-    use HasFactory;
+    use HasFactory, Slugs;
 
     protected $fillable = [
         'title',
         'is_visible',
         'image_upload',
         'is_highlighted',
+        'slug',
     ];
 
     protected $casts = [
