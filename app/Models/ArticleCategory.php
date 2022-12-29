@@ -36,7 +36,7 @@ class ArticleCategory extends Model
             return 'images/user.png';
         }
 
-        return 'storage/' . $image;
+        return '/storage/' . $image;
     }
 
     public function getLink()
