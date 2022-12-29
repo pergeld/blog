@@ -1,4 +1,4 @@
-<header class="py-6">
+<header class="py-6 border-b-2 border-gray-100">
     <div class="container flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full">
         <div class="text-lg font-bold">Logo helye</div>
 

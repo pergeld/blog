@@ -1,6 +1,6 @@
 <section id="banner" class="container mt-12 flex flex-col justify-center items-center text-center mx-auto px-8 md:px-14 lg:px-24">
     <div class="flex flex-wrap md:flex-nowrap">
-        <div class="flex flex-wrap justify-center text-center max-w-4xl mt-0 md:mt-36">
+        <div class="flex flex-wrap justify-center text-center max-w-4xl mt-16">
             <h1 class="mx-auto max-w-6xl font-display text-5xl font-medium tracking-tight text-gray-900 sm:text-7xl lg:text-8xl">Laravel <br>
                 <span class="text-blue-600">lépésről lépésre</span>
             </h1>
@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <div class="mt-36 lg:mt-44">
+    <div class="mt-20">
         <p class="font-display text-base text-gray-900">Program nyelvek, keretrendszerek melyekről olvashatsz nálunk!</p>
 
         <ul role="list" class="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 flex justify-center text-center gap-6">
