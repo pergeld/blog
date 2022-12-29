@@ -3,9 +3,9 @@
         <div class="text-lg font-bold">Logo helye</div>
 
         <div class="hidden md:flex space-x-12 items-center">
-            <a href="#" class="py-1 px-2 text-gray-900 rounded-lg duration-300 hover:bg-gray-100 hover:text-gray-700">Kezdőlap</a>
-            <a href="#" class="py-1 px-2 text-gray-900 rounded-lg duration-300 hover:bg-gray-100 hover:text-gray-700">Blog</a>
-            <a href="#" class="py-1 px-2 text-gray-900 rounded-lg duration-300 hover:bg-gray-100 hover:text-gray-700">Témák</a>
+            <a href="{{ route('home') }}" class="@if(Route::currentRouteName() == 'home') bg-gray-100 text-gray-700 @else text-gray-900 hover:bg-gray-100 hover:text-gray-700 @endif px-2 rounded-lg duration-300">Kezdőlap</a>
+            <a href="{{ route('articles') }}" class="@if(Route::currentRouteName() == 'articles') bg-gray-100 text-gray-700 @else text-gray-900 hover:bg-gray-100 hover:text-gray-700 @endif px-2 rounded-lg duration-300">Blog</a>
+            <a href="{{ route('articleCategories') }}" class="@if(Route::currentRouteName() == 'articleCategories') bg-gray-100 text-gray-700 @else text-gray-900 hover:bg-gray-100 hover:text-gray-700 @endif px-2 rounded-lg duration-300">Témák</a>
             <a href="#" class="py-1 px-2 text-gray-900 rounded-lg duration-300 hover:bg-gray-100 hover:text-gray-700">Rólunk</a>
             <a href="#" class="py-1 px-2 text-gray-900 rounded-lg duration-300 hover:bg-gray-100 hover:text-gray-700">Csapat</a>
         </div>
